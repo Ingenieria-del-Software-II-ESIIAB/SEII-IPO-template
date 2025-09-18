@@ -1,6 +1,6 @@
-#[Instrucciones en Español](#instrucciones-para-utilizar-esta-plantilla).
+#[Instrucciones en Español para Grupo A y Grupo B](#instrucciones-para-utilizar-esta-plantilla).
 
-#[Instructions in English](#instructions-to-use-this-template).
+#[Instructions in English for Group I](#instructions-to-use-this-template).
 
 # Instrucciones para utilizar esta plantilla.
 
