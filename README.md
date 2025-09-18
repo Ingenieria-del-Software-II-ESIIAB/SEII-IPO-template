@@ -6,21 +6,22 @@
 
 ## 1. Cree la organización 
 
-Cree el repositorio de su equipo con el nombre **ISII2526GrupoXYourName**, donde GrupoX puede ser GrupoA, GrupoB o GrupoI, siguiendo las instrucciones disponibles en:  
+Cree el repositorio de su equipo con el nombre **ISII2526GrupoXYourName**, donde GrupoX puede ser GrupoA, GrupoB o GrupoI, 
+- Siga las instrucciones disponibles en el siguiente enlace  
 [Create an organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
+- Establezca que dicha organización pertenece a su **cuenta personal**. 
 
 ## 2. Añada los miembros de su equipo a la organización
 
 Añada a los miembros siguiendo las instrucciones disponibles en:  
 [Inviting users to join your organization](https://docs.github.com/en/organizations/managing-membership-in-your-organization/inviting-users-to-join-your-organization).
 
-
 ## 3. Clone el repositorio
 
-Cree el repositorio de su equipo con el nombre **ISII2526TeamName**, utilizando esta plantilla y 
-siguiendo las instrucciones disponibles en:  
+Cree el repositorio de su equipo con el nombre **ISII2526TeamName** utilizando esta plantilla
+- Siga las instrucciones disponibles en:  
 [Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-
+- **Estableca que el propietario (owner) es la organización que acaba de crear**.
 
 ## 4. Configure el repositorio de su equipo.
 
@@ -78,8 +79,11 @@ project:
 
 ## 1. Create the organisation
 
-Create your team's repository with the name **ISII2526GroupXYourName**, where GroupX can be GroupA, GroupB, or GroupI, following the instructions available at:  
+Create your team's repository with the name **ISII2526GroupIYourName**:
+- Follow the instructions available at 
 [Create an organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
+- Establish that this organisation **belongs to your personal account**
+
 
 ## 2. Add your team members to the organisation
 
@@ -88,9 +92,10 @@ Add members by following the instructions available at:
 
 ## 3. Clone the repository
 
-Create your team's repository with the name **ISII2526TeamName**, using this template and 
-following the instructions available at:  
+Create your team's repository with the name **ISII2526TeamName**, using this template:
+- Follow the instructions available at:  
 [Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
+- **Establish that the owner is the organisation you have just created.**
 
 ## 4. Configure your team's repository.
 
