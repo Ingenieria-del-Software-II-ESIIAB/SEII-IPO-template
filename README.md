@@ -6,8 +6,7 @@
 
 ## 1. Cree la organización 
 
-Cree el repositorio de su equipo con el nombre **ISII2526GrupoXYourName**, donde GrupoX puede ser GrupoA o GrupoB: 
-- Siga las instrucciones disponibles en el siguiente enlace  
+Cree el repositorio de su equipo con el nombre **ISII2526GrupoXYourName**, donde GrupoX puede ser GrupoA o GrupoB siguiendo las instrucciones disponibles en:  
 [Create an organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - Establezca que dicha organización pertenece a su **cuenta personal**. 
 
