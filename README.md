@@ -6,7 +6,7 @@
 
 ## 1. Cree la organización 
 
-Cree el repositorio de su equipo con el nombre **ISII2526GrupoXYourName**, donde GrupoX puede ser GrupoA o GrupoB siguiendo las instrucciones disponibles en:  
+Cree la organización para su equipo con el nombre **ISII2526GrupoXYourName**, donde GrupoX puede ser GrupoA o GrupoB siguiendo las instrucciones disponibles en:  
 [Create an organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - Establezca que dicha organización pertenece a su **cuenta personal**. 
 
@@ -72,7 +72,7 @@ Añada con el role **Write**  a los miembros de su equipo siguiendo las instrucci
 
 ## 1. Create the organisation
 
-Create your team's repository with the name **ISII2526GroupIYourName**:
+Create your team's organisation with the name **ISII2526GroupIYourName**:
 - Follow the instructions available at 
 [Create an organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - Establish that this organisation **belongs to your personal account**
