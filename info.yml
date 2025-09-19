@@ -4,7 +4,7 @@ project:
   teamId: 'Team'
   identities: {}
   notifications:
-    email: 'member1@gmail.com,member2@gmail.com,member3@gmail.com,member4@gmail.com'
+    email: 'member1@alu.uclm.es,member2@alu.uclm.es,member3@alu.uclm.es,member4@alu.uclm.es'
   members:
     member1:
       name: 'Name1'

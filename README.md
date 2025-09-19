@@ -10,21 +10,17 @@ Cree el repositorio de su equipo con el nombre **ISII2526GrupoXYourName**, donde
 [Create an organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - Establezca que dicha organización pertenece a su **cuenta personal**. 
 
-## 2. Añada los miembros de su equipo a la organización
-
-Añada a los miembros siguiendo las instrucciones disponibles en:  
-[Inviting users to join your organization](https://docs.github.com/en/organizations/managing-membership-in-your-organization/inviting-users-to-join-your-organization).
-
-## 3. Clone el repositorio
+## 2. Clone el repositorio
 
 Cree el repositorio de su equipo con el nombre **ISII2526TeamName** utilizando esta plantilla
 - Siga las instrucciones disponibles en:  
 [Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-- **Estableca que el propietario (owner) es la organización que acaba de crear**.
+- Estableca que el **propietario (owner) es la organización que acaba de crear**.
+- Estableca la visibilidad (visibility) **como pública**.
 
-## 4. Configure el repositorio de su equipo.
+## 3. Configure el repositorio de su equipo.
 
-**4.1. En la rama development modificar el archivo `info.yml`.**
+**3.1. En la rama development modificar el archivo `info.yml`.**
 
 ```yaml
 project:
@@ -33,7 +29,7 @@ project:
   teamId: 'Team'
   identities: {}
   notifications:
-    email: 'member1@gmail.com,member2@gmail.com,member3@gmail.com,member4@gmail.com'
+    email: 'member1@alu.uclm.es,member2@alu.uclm.es,member3@alu.uclm.es,member4@alu.uclm.es'
   members:
     member1:
       name: 'Name1'
@@ -65,14 +61,12 @@ project:
 - Si el número de miembros es 3 entonces, eliminar member4 de la sección `members`.
 - Modificar la cadena de `notifications.email` para que contengan sólo los correos @alu.uclm.es de todos los miembros separados por comas y sin espacios.
 
-## 5. Unir el proyecto a la asignatura a la herramienta Bluejay
+**3.2. Añada los miembros de su equipo al repo.**
 
-- Accede a [join.bluejay.governify.io](https://join.bluejay.governify.io).
-- Añade la **URL del repositorio** de GitHub.
-- Click en **CHECK**. Si ha dado error revisa la [sintaxis](https://www.yamllint.com/) del info.yml.
-- **Selecciona la clase** a la que te quieres unir (ISII-2526) y especifica el código que te dará tu profesor.
-- Click en **JOIN**.
-- En caso de que haya algún otro problema al configurar Bluejay, el equipo de soporte está disponible en [un canal de Gitter dedicado](https://app.gitter.im/#/room/!VTAnLfNgxrEdydQgWd:gitter.im).
+Añada con el role **Write**  a los miembros de su equipo siguiendo las instrucciones disponibles en:  
+[Managing teams and people with access to your repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository).
+
+
 
 # Instructions to use this template.
 
@@ -84,21 +78,18 @@ Create your team's repository with the name **ISII2526GroupIYourName**:
 - Establish that this organisation **belongs to your personal account**
 
 
-## 2. Add your team members to the organisation
-
-Add members by following the instructions available at:  
-[Inviting users to join your organisation](https://docs.github.com/en/organizations/managing-membership-in-your-organization/inviting-users-to-join-your-organization).
-
-## 3. Clone the repository
+## 2. Clone the repository
 
 Create your team's repository with the name **ISII2526TeamName**, using this template:
 - Follow the instructions available at:  
 [Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-- **Establish that the owner is the organisation you have just created.**
+- Establish that **the owner is the organisation you have just created.**
+- Establish that **Visibility is Public.**
 
-## 4. Configure your team's repository.
 
-**4.1. In the development branch, modify the `info.yml` file.**
+## 3. Configure your team's repository.
+
+**3.1. In the development branch, modify the `info.yml` file.**
 
 ```yaml
 project:
@@ -107,7 +98,7 @@ project:
   teamId: 'Team'
   identities: {}
   notifications:
-    email: 'member1@gmail.com,member2@gmail.com,member3@gmail.com,member4@gmail.com'
+    email: 'member1@alu.uclm.es,member2@alu.uclm.es,member3@alu.uclm.es,member4@alu.uclm.es'
   members:
     member1:
       name: 'Name1'
@@ -136,10 +127,9 @@ project:
     >```
 - Replace the data for each memberN with that of the actual member.
 - If the number of members is 3, delete member4 from the `members` section.
-- Modify the `notifications.email` string so that it only contains the @alu.uclm.es email addresses of all members, separated by commas and without spaces.
+- Modify the `notifications:email` string so that it only contains the @alu.uclm.es email addresses of all members, separated by commas and without spaces.
 
-## 5. Link the project to the course using the Bluejay tool
+**3.2. Add your team members to the team.**
 
-- Go to [join.bluejay.governify.io](https://join.bluejay.governify.io).
-- Add the GitHub **repository URL**.
-- Click on **CHECK**. If you get an error, check the [syntax](https://www.yamllint.com/) of the info.yml.
+Add members with the role **Write** to your repo by following the instructions available at:  
+[Managing teams and people with access to your repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository).
