@@ -11,6 +11,7 @@ Cree la organización para su equipo con el nombre **ISII-2526-GrupoX-Team**, don
 - Establezca que dicha organización pertenece a su **cuenta personal**. 
 
 
+
 **1.1 Añada un equipo a su organización**
 Siga las instrucciones para crear el equipo [Creating an organization team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
 
