@@ -6,21 +6,33 @@
 
 ## 1. Cree la organización 
 
-Cree la organización para su equipo con el nombre **ISII2526GrupoXYourName**, donde GrupoX puede ser GrupoA o GrupoB siguiendo las instrucciones disponibles en:  
+Cree la organización para su equipo con el nombre **ISII-2526-GrupoX-Team**, donde GrupoX puede ser GrupoA o GrupoB siguiendo las instrucciones disponibles en:  
 [Create an organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - Establezca que dicha organización pertenece a su **cuenta personal**. 
 
-## 2. Clone el repositorio
+**1.1 Añada un equipo a su organización**
+Siga las instrucciones para crear el equipo [Creating an organization team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
+**1.1 Añada miembros al equipo de su organización**
+Siga las instrucciones para añadir miembros [Adding organization members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
 
-Cree el repositorio de su equipo con el nombre **ISII2526TeamName** utilizando esta plantilla
+## 2. Crear el proyecto
+Cree su proyecto con el nombre ISII2526TeamName utilizando la plantilla disponible en: [Plantilla](https://github.com/orgs/Ingenieria-del-Software-II-ESIIAB/projects/14/views/1)
+ADVERTENCIA: el nombre del proyecto NO PUEDE CONTENER ESPACIOS NI CARACTERES NO ALFABÉTICOS
+- Establece que **el propietario es la organización que acabas de crear.**
+
+
+## 3. Clone el repositorio
+
+Cree el repositorio de su equipo con el nombre **ISII2526TeamName** utilizando esta plantilla: [Plantilla](https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template)
 - Siga las instrucciones disponibles en:  
 [Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
 - Estableca que el **propietario (owner) es la organización que acaba de crear**.
 - Estableca la visibilidad (visibility) **como pública**.
+- Enlace el repositorio con el proyecto creado antes [Adding your project to a repository](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/adding-your-project-to-a-repository)
 
-## 3. Configure el repositorio de su equipo.
+## 4. Configure el repositorio de su equipo.
 
-**3.1. En la rama development modificar el archivo `info.yml`.**
+**4.1. En la rama development modificar el archivo `info.yml`.**
 
 ```yaml
 project:
@@ -61,10 +73,9 @@ project:
 - Si el número de miembros es 3 entonces, eliminar member4 de la sección `members`.
 - Modificar la cadena de `notifications.email` para que contengan sólo los correos @alu.uclm.es de todos los miembros separados por comas y sin espacios.
 
-**3.2. Añada los miembros de su equipo al repo.**
+**4.2. Añada los miembros de su equipo al repo.**
+- Invite al Equipo que ha creado a su repositorio con el Role **Write**:[Inviting a team](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
 
-Añada con el role **Write**  a los miembros de su equipo siguiendo las instrucciones disponibles en:  
-[Managing teams and people with access to your repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository).
 
 
 
@@ -72,24 +83,33 @@ Añada con el role **Write**  a los miembros de su equipo siguiendo las instrucci
 
 ## 1. Create the organisation
 
-Create your team's organisation with the name **ISII2526GroupIYourName**:
+Create your team's organisation with the name **ISII-2526-GrupoI-Team** where Team is the name of your team:
 - Follow the instructions available at 
 [Create an organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - Establish that this organisation **belongs to your personal account**
+**1.1 Add a team to your organisation**
+Follow the instructions to create the team [Creating an organisation team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
+**1.1 Add members to your organisation team**
+Follow the instructions to add members [Adding organisation members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
 
+## 2. Create the Project
+Create your project with the name ISII2526TeamName using the template available at: [Template](https://github.com/orgs/Ingenieria-del-Software-II-ESIIAB/projects/14/views/1)
+WARNING: the project name CANNOT CONTAIN SPACES OR NON-ALPHABETICAL CHARACTERS
+- Establish that **the owner is the organisation you have just created.**
 
-## 2. Clone the repository
+## 3. Clone the repository
 
 Create your team's repository with the name **ISII2526TeamName**, using this template:
+[Template](https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template).
 - Follow the instructions available at:  
 [Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
 - Establish that **the owner is the organisation you have just created.**
 - Establish that **Visibility is Public.**
+- Link the repo with the project you have just created [Adding your project to a repository](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/adding-your-project-to-a-repository)
 
+## 4. Configure your team's repository.
 
-## 3. Configure your team's repository.
-
-**3.1. In the development branch, modify the `info.yml` file.**
+**4.1. In the development branch, modify the `info.yml` file.**
 
 ```yaml
 project:
@@ -129,7 +149,6 @@ project:
 - If the number of members is 3, delete member4 from the `members` section.
 - Modify the `notifications:email` string so that it only contains the @alu.uclm.es email addresses of all members, separated by commas and without spaces.
 
-**3.2. Add your team members to the team.**
+**4.2. Add your team members to the team.**
 
-Add members with the role **Write** to your repo by following the instructions available at:  
-[Managing teams and people with access to your repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository).
+- Invite the Team you have created with the Role **Write**:[Inviting a team](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
