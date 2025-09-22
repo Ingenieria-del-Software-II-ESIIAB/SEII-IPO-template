@@ -10,9 +10,11 @@ Cree la organización para su equipo con el nombre **ISII-2526-GrupoX-Team**, don
 [Create an organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - Establezca que dicha organización pertenece a su **cuenta personal**. 
 
+
 **1.1 Añada un equipo a su organización**
 Siga las instrucciones para crear el equipo [Creating an organization team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
-**1.1 Añada miembros al equipo de su organización**
+
+**1.2 Añada miembros al equipo de su organización**
 Siga las instrucciones para añadir miembros [Adding organization members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
 
 ## 2. Crear el proyecto
@@ -87,9 +89,11 @@ Create your team's organisation with the name **ISII-2526-GrupoI-Team** where Te
 - Follow the instructions available at 
 [Create an organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
 - Establish that this organisation **belongs to your personal account**
+
 **1.1 Add a team to your organisation**
 Follow the instructions to create the team [Creating an organisation team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
-**1.1 Add members to your organisation team**
+
+**1.2 Add members to your organisation team**
 Follow the instructions to add members [Adding organisation members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
 
 ## 2. Create the Project
