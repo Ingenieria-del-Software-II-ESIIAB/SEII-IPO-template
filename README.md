@@ -1,36 +1,42 @@
-#[Instrucciones en Español para Grupo A y Grupo B](#instrucciones-para-utilizar-esta-plantilla).
+#[Instrucciones en EspaÃ±ol para Grupo A y Grupo B](#instrucciones-para-utilizar-esta-plantilla).
 
 #[Instructions in English for Group I](#instructions-to-use-this-template).
 
 # Instrucciones para utilizar esta plantilla.
 
-## 1. Cree la organización 
+## 1. Cree la organizaciÃ³n 
 
-Cree la organización para su equipo con el nombre **ISII-2526-GrupoX-Team**, donde GrupoX puede ser GrupoA o GrupoB siguiendo las instrucciones disponibles en:  
+- Cree la organizaciÃ³n para su equipo con el nombre **ISII-2526-GrupoX-Team**, donde GrupoX puede ser GrupoA o GrupoB siguiendo las instrucciones disponibles en: Â 
 [Create an organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
-- Establezca que dicha organización pertenece a su **cuenta personal**. 
+
+- Establezca que dicha organizaciÃ³n pertenece a su **cuenta personal**. 
 
 
-**1.1 Añada un equipo a su organización**
+**1.1 AÃ±ada un equipo a su organizaciÃ³n**
+
 Siga las instrucciones para crear el equipo [Creating an organization team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
 
 
-**1.2 Añada miembros al equipo de su organización**
-Siga las instrucciones para añadir miembros [Adding organization members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
+**1.2 AÃ±ada miembros al equipo de su organizaciÃ³n**
+
+Siga las instrucciones para aÃ±adir miembros [Adding organization members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
+
 
 ## 2. Crear el proyecto
+
 Cree su proyecto con el nombre ISII2526TeamName utilizando la plantilla disponible en: [Plantilla](https://github.com/orgs/Ingenieria-del-Software-II-ESIIAB/projects/14/views/1)
-ADVERTENCIA: el nombre del proyecto NO PUEDE CONTENER ESPACIOS NI CARACTERES NO ALFABÉTICOS
-- Establece que **el propietario es la organización que acabas de crear.**
+
+- ADVERTENCIA: el nombre del proyecto NO PUEDE CONTENER ESPACIOS NI CARACTERES NO ALFABÃ‰TICOS
+- Establece que **el propietario es la organizaciÃ³n que acabas de crear.**
 
 
 ## 3. Clone el repositorio
 
 Cree el repositorio de su equipo con el nombre **ISII2526TeamName** utilizando esta plantilla: [Plantilla](https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template)
-- Siga las instrucciones disponibles en:  
+- Siga las instrucciones disponibles en: Â 
 [Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-- Estableca que el **propietario (owner) es la organización que acaba de crear**.
-- Estableca la visibilidad (visibility) **como pública**.
+- Estableca que el **propietario (owner) es la organizaciÃ³n que acaba de crear**.
+- Estableca la visibilidad (visibility) **como pÃºblica**.
 - Enlace el repositorio con el proyecto creado antes [Adding your project to a repository](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/adding-your-project-to-a-repository)
 
 ## 4. Configure el repositorio de su equipo.
@@ -65,7 +71,7 @@ project:
 ```
 
 - Donde, GrupoX puede ser GrupoA, GrupoB, o GrupoI, y Team es el nombre del equipo
-    > Por ejemplo, el equipo "TheLeaders" matriculado en el GrupoI sería:
+    > Por ejemplo, el equipo "TheLeaders" matriculado en el GrupoI serÃ­a:
     >```yaml
     >name: 'ISII-2526-GrupoI-TheLeaders'
     >owner: 'GrupoI'
@@ -73,10 +79,20 @@ project:
     >```
 
 - Sustituir los datos de cada memberN por los del miembro real.
-- Si el número de miembros es 3 entonces, eliminar member4 de la sección `members`.
-- Modificar la cadena de `notifications.email` para que contengan sólo los correos @alu.uclm.es de todos los miembros separados por comas y sin espacios.
+- Si el nÃºmero de miembros es 3 entonces, eliminar member4 de la secciÃ³n `members`.
+- Modificar la cadena de `notifications.email` para que contengan sÃ³lo los correos @alu.uclm.es de todos los miembros separados por comas y sin espacios.
 
-**4.2. Añada los miembros de su equipo al repo.**
+**4.2. Unir el proyecto a la asignatura auditada por Bluejay**
+- Cree la rama **main** utilizando development como fuente [como crear una rama] (https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch-via-the-branches-overview)
+- Accede a [join.bluejay.governify.io](https://join.bluejay.governify.io).
+- AÃ±ade la **URL del repositorio** de GitHub.
+- Click en **CHECK**. Si ha dado error revisa la [sintaxis](https://www.yamllint.com/) del info.yml.
+- **Selecciona la clase** a la que te quieres unir (ISII-2526) y especifica el cÃ³digo que te darÃ¡ tu profesor.
+- Click en **JOIN**.
+- En caso de que haya algÃºn otro problema al configurar Bluejay, el equipo de soporte estÃ¡ disponible en [un canal de Gitter dedicado](https://app.gitter.im/#/room/!VTAnLfNgxrEdydQgWd:gitter.im).
+
+
+**4.3. AÃ±ada los miembros de su equipo al repo.**
 - Invite al Equipo que ha creado a su repositorio con el Role **Write**:[Inviting a team](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
 
 
@@ -146,7 +162,7 @@ project:
 ```
 
 - Where GroupX must be GroupI, and Team is the name of the team
-    > For example, the team ‘TheLeaders’ registered in GroupI would be:
+    > For example, the team â€˜TheLeadersâ€™ registered in GroupI would be:
     >```yaml
     >name: 'ISII-2526-GrupoI-TheLeaders'
     >owner: 'GroupI'
