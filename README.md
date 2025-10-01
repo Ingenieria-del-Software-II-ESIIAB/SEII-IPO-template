@@ -12,12 +12,12 @@
 - Establezca que dicha organización pertenece a su **cuenta personal**. 
 
 
-**1.1 Añada un equipo a su organización**
+### 1.1 Añada un equipo a su organización
 
 Siga las instrucciones para crear el equipo [Creating an organization team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
 
 
-**1.2 Añada miembros al equipo de su organización**
+### 1.2 Añada miembros al equipo de su organización
 
 Siga las instrucciones para añadir miembros [Adding organization members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
 
@@ -27,7 +27,8 @@ Siga las instrucciones para añadir miembros [Adding organization members to a t
 Cree su proyecto con el nombre ISII2526TeamName utilizando la plantilla disponible en: [Plantilla](https://github.com/orgs/Ingenieria-del-Software-II-ESIIAB/projects/14/views/1)
 
 - ADVERTENCIA: el nombre del proyecto NO PUEDE CONTENER ESPACIOS NI CARACTERES NO ALFABÉTICOS
-- Establece que **el propietario es la organización que acabas de crear.**
+- Establezca que **el propietario es la organización que acabas de crear.**
+- Establezca la visibilidad (visibility) **como pública**. [establece la visibilidad](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/managing-visibility-of-your-projects#changing-project-visibility)
 
 
 ## 3. Cree el repositorio
@@ -35,13 +36,13 @@ Cree su proyecto con el nombre ISII2526TeamName utilizando la plantilla disponib
 Cree el repositorio de su equipo con el nombre **ISII2526TeamName** utilizando esta plantilla: [Plantilla](https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template)
 - Siga las instrucciones disponibles en:  
 [Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-- Estableca que el **propietario (owner) es la organización que acaba de crear**.
-- Estableca la visibilidad (visibility) **como pública**.
+- Establezca que el **propietario (owner) es la organización que acaba de crear**.
+- Establezca la visibilidad (visibility) **como pública**.
 - Enlace el repositorio con el proyecto creado antes [Adding your project to a repository](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/adding-your-project-to-a-repository)
 
 ## 4. Configure el repositorio de su equipo.
 
-**4.1. En la rama development modificar el archivo `info.yml`.**
+### 4.1. En la rama development modificar el archivo `info.yml`.
 
 ```yaml
 project:
@@ -81,8 +82,9 @@ project:
 - Sustituir los datos de cada memberN por los del miembro real.
 - Si el número de miembros es 3 entonces, eliminar member4 de la sección `members`.
 - Modificar la cadena de `notifications.email` para que contengan sólo los correos @alu.uclm.es de todos los miembros separados por comas y sin espacios.
+- Los githubUsername tienen que existir en GitHub.
 
-**4.2. Unir el proyecto a la asignatura auditada por Bluejay**
+### 4.2. Unir el proyecto a la asignatura auditada por Bluejay.
 - Cree la rama **main** utilizando development como fuente [como crear una rama](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch-via-the-branches-overview)
 - Accede a [join.bluejay.governify.io](https://join.bluejay.governify.io).
 - Añade la **URL del repositorio** de GitHub. Por ejemplo, la url de este repositorio es "https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template"
@@ -92,7 +94,7 @@ project:
 - En caso de que haya algún otro problema al configurar Bluejay, el equipo de soporte está disponible en [un canal de Gitter dedicado](https://app.gitter.im/#/room/!VTAnLfNgxrEdydQgWd:gitter.im).
 
 
-**4.3. Añada los miembros de su equipo al repo.**
+### 4.3. Añada los miembros de su equipo al repo.
 - Invite al Equipo que ha creado a su repositorio con el Role **Write**: [Invitar a un equipo](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
 
 
@@ -114,7 +116,6 @@ Create your team's organisation with the name **ISII-2526-GrupoI-Team** where Te
 
 Follow the instructions to create the team [Creating an organisation team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
 
-
 **1.2 Add members to your organisation team**
 
 Follow the instructions to add members [Adding organisation members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
@@ -125,6 +126,7 @@ Create your project with the name ISII2526TeamName using the template available 
 
 - WARNING: the project name CANNOT CONTAIN SPACES OR NON-ALPHABETICAL CHARACTERS
 - Establish that **the owner is the organisation you have just created.**
+- Establish the visibility of the project as **public**. [set visibility](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/managing-visibility-of-your-projects#changing-project-visibility)
 
 ## 3. Create the repository
 
@@ -138,7 +140,7 @@ Create your team's repository with the name **ISII2526TeamName**, using this tem
 
 ## 4. Configure your team's repository.
 
-**4.1. In the development branch, modify the `info.yml` file.**
+### 4.1. In the development branch, modify the `info.yml` file.
 
 ```yaml
 project:
@@ -178,7 +180,7 @@ project:
 - If the number of members is 3, delete member4 from the `members` section.
 - Modify the `notifications:email` string so that it only contains the @alu.uclm.es email addresses of all members, separated by commas and without spaces.
 
-**4.2. Link the project to the course audited by Bluejay**
+### 4.2. Link the project to the course audited by Bluejay
 - Create the **main** branch using development as the source [How to create a branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch-via-the-branches-overview)
 - Go to [join.bluejay.governify.io](https://join.bluejay.governify.io).
 - Add the GitHub URL of **your repository**. For instance, the URL of this repo is "https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template"
@@ -188,6 +190,6 @@ project:
 - If you encounter any other problems when configuring Bluejay, the support team is available on a dedicated Gitter channel (https://app.gitter.im/#/room/!VTAnLfNgxrEdydQgWd:gitter.im).
 
 
-**4.3. Add your team to the repo.**
+### 4.3. Add your team to the repo.
 
-- Invite the Team you have created with the Role **Write**:[Inviting a team](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
+Invite the Team you have created with the Role **Write**:[Inviting a team](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
