@@ -30,7 +30,7 @@ Cree su proyecto con el nombre ISII2526TeamName utilizando la plantilla disponib
 - Establece que **el propietario es la organización que acabas de crear.**
 
 
-## 3. Clone el repositorio
+## 3. Cree el repositorio
 
 Cree el repositorio de su equipo con el nombre **ISII2526TeamName** utilizando esta plantilla: [Plantilla](https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template)
 - Siga las instrucciones disponibles en:  
@@ -83,17 +83,17 @@ project:
 - Modificar la cadena de `notifications.email` para que contengan sólo los correos @alu.uclm.es de todos los miembros separados por comas y sin espacios.
 
 **4.2. Unir el proyecto a la asignatura auditada por Bluejay**
-- Cree la rama **main** utilizando development como fuente [como crear una rama] (https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch-via-the-branches-overview)
+- Cree la rama **main** utilizando development como fuente [como crear una rama](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch-via-the-branches-overview)
 - Accede a [join.bluejay.governify.io](https://join.bluejay.governify.io).
-- Añade la **URL del repositorio** de GitHub.
+- Añade la **URL del repositorio** de GitHub. Por ejemplo, la url de este repositorio es "https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template"
 - Click en **CHECK**. Si ha dado error revisa la [sintaxis](https://www.yamllint.com/) del info.yml.
-- **Selecciona la clase** a la que te quieres unir (ISII-2526) y especifica el código que te dará tu profesor.
+- **Selecciona el curso** al que te quieres unir (UCLM-ISII-2526) y especifica el código que te dará tu profesor.
 - Click en **JOIN**.
 - En caso de que haya algún otro problema al configurar Bluejay, el equipo de soporte está disponible en [un canal de Gitter dedicado](https://app.gitter.im/#/room/!VTAnLfNgxrEdydQgWd:gitter.im).
 
 
 **4.3. Añada los miembros de su equipo al repo.**
-- Invite al Equipo que ha creado a su repositorio con el Role **Write**:[Inviting a team](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
+- Invite al Equipo que ha creado a su repositorio con el Role **Write**: [Invitar a un equipo](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
 
 
 
@@ -126,10 +126,9 @@ Create your project with the name ISII2526TeamName using the template available 
 - WARNING: the project name CANNOT CONTAIN SPACES OR NON-ALPHABETICAL CHARACTERS
 - Establish that **the owner is the organisation you have just created.**
 
-## 3. Clone the repository
+## 3. Create the repository
 
-Create your team's repository with the name **ISII2526TeamName**, using this template:
-[Template](https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template).
+Create your team's repository with the name **ISII2526TeamName**, using this template: [Template](https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template).
 
 - Follow the instructions available at:  
 [Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
@@ -182,13 +181,13 @@ project:
 **4.2. Link the project to the course audited by Bluejay**
 - Create the **main** branch using development as the source [How to create a branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch-via-the-branches-overview)
 - Go to [join.bluejay.governify.io](https://join.bluejay.governify.io).
-- Add the GitHub URL of **your repository**.
+- Add the GitHub URL of **your repository**. For instance, the URL of this repo is "https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template"
 - Click **CHECK**. If you get an error, check the [syntax](https://www.yamllint.com/) of the info.yml.
-- **Select the course** you want to join (ISII-2526) and specify the code your teacher will give you.
+- **Select the course** you want to join (UCLM-ISII-2526) and specify the password your teacher will give you.
 - Click **JOIN**.
 - If you encounter any other problems when configuring Bluejay, the support team is available on a dedicated Gitter channel (https://app.gitter.im/#/room/!VTAnLfNgxrEdydQgWd:gitter.im).
 
 
-**4.3. Add your team members to the team.**
+**4.3. Add your team to the repo.**
 
 - Invite the Team you have created with the Role **Write**:[Inviting a team](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
