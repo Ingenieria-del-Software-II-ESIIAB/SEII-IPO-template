@@ -35,6 +35,12 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 
+//this variable obtains the url where the API has been deployed
+string? URI2API = builder.Configuration.GetValue(typeof(string), "AppForMovies_API") as string;
+
+//We create the service for accessing the API from where .WEB project
+//builder.Services.AddScoped<AppForMoviesAPIClient>(sp => new AppForMoviesAPIClient(URI2API, new HttpClient()));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
