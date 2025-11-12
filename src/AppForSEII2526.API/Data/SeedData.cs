@@ -48,20 +48,20 @@ namespace AppForSEII2526.API.Data {
 
         public static void SeedUsers(UserManager<ApplicationUser> userManager, List<string> roles) {
             ////first, it checks the user does not already exist in the DB
-            //if (userManager.FindByNameAsync("elena@uclm.es").Result == null) {
+            if (userManager.FindByNameAsync("elena@uclm.es").Result == null) {
 
-            //// You must update the constructor according to your needs
-            //    ApplicationUser user = new ApplicationUser("1", "Elena", "Navarro Martínez", "elena@uclm.es", "Avda. España 2, Albacete");
-            //    user.EmailConfirmed = true;
+                // You must update the constructor according to your needs
+                ApplicationUser user = new ApplicationUser("1", "Elena", "Navarro Martínez", "elena@uclm.es", "Avda. España 2", "Albacete");
+                user.EmailConfirmed = true;
 
-            //    var result = userManager.CreateAsync(user, "Password1234%");
-            //    result.Wait();
+                var result = userManager.CreateAsync(user, "Password1234%");
+                result.Wait();
 
-            //    if (result.IsCompletedSuccessfully) {
-            //        //administrator role
-            //        userManager.AddToRoleAsync(user, roles[0]).Wait();
-            //    }
-            //}
+                if (result.IsCompletedSuccessfully) {
+                    //administrator role
+                    userManager.AddToRoleAsync(user, roles[0]).Wait();
+                }
+            }
 
         }
 
