@@ -14,6 +14,6 @@ global using System.Threading.Tasks;
 global using AppForSEII2526.API.Models;
 global using AppForSEII2526.API.Data;
 global using System.Text.Json.Serialization;
-global using Microsoft.OpenApi.Models;
+global using Microsoft.OpenApi;
 global using Swashbuckle.AspNetCore.SwaggerGen;
 global using System.Reflection;
