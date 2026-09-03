@@ -8,22 +8,22 @@ REM - Third, replace AppForMovies in the next line with the name (WITHOUT WHITES
 REM - Fourth, run this .bat in the command line
 REM - Commit and push the changes done
 
-SET PROJECT_NAME=AppForSEII2526
+SET PROJECT_NAME=AppForSEII
 if PROJECT_NAME=="" SET PROJECT_NAME=AppForMovies
 
 REM - Fourth, run commands.bat opening a command line interface like cmd and writting commands
 
-SET NETCORE_VERSION=net8.0
-SET NETCORE_LIB_VERSION=8.0.16
-SET WEB_CODE_GENERATION_LIB_VERSION=8.0.6
-SET SWASHBUCKLE_VERSION=8.1.4
+SET NETCORE_VERSION=net10.0
+SET NETCORE_LIB_VERSION=10.0.11
+SET WEB_CODE_GENERATION_LIB_VERSION=10.0.2
+SET SWASHBUCKLE_VERSION=10.2.3
 SET DATA_ANNOTATIONS_LIB_VERSION=3.2.0-rc1.20223.4
-SET XUNIT_VERSION=2.9.3
-SET XUNIT_RUNNER_VERSION=3.1.1
+SET XUNIT_VERSION=4.0.0
+SET XUNIT_RUNNER_VERSION=4.0.0
 SET MOQ_VERSION=4.20.72
-SET SELENIUM_VERSION=4.33.0
-SET CHROME_DRIVER_VERSION=137.0.7151.6800
-SET COVERLET_VERSION=6.0.4
+SET SELENIUM_VERSION=4.48.0
+SET CHROME_DRIVER_VERSION=18.9.0
+SET COVERLET_VERSION=10.0.1
 
 
 
@@ -63,6 +63,7 @@ cd "%PROJECT_NAME%".API
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.EntityFrameworkCore.Tools --version %NETCORE_LIB_VERSION%
+dotnet add package Swashbuckle.AspNetCore --version %SWASHBUCKLE_VERSION%
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version %WEB_CODE_GENERATION_LIB_VERSION%
 dotnet add package Microsoft.AspNetCore.Components.DataAnnotations.Validation --version %DATA_ANNOTATIONS_LIB_VERSION%
@@ -86,8 +87,8 @@ cd ..
 
 REM - add the created projects to the solution
 cd..
-dotnet sln "%PROJECT_NAME%".sln add src/"%PROJECT_NAME%".API
-dotnet sln "%PROJECT_NAME%".sln add src/"%PROJECT_NAME%".Web
+dotnet sln "%PROJECT_NAME%".slnx add src/"%PROJECT_NAME%".API
+dotnet sln "%PROJECT_NAME%".slnx add src/"%PROJECT_NAME%".Web
 
 
 REM -------------------------------TEST-----------------------------------------------------------------------
@@ -127,8 +128,8 @@ cd..
 
 REM - add the created projects to the solution
 cd..
-dotnet sln "%PROJECT_NAME%".sln add test/"%PROJECT_NAME%".UT
-dotnet sln "%PROJECT_NAME%".sln add test/"%PROJECT_NAME%".UIT
+dotnet sln "%PROJECT_NAME%".slnx add test/"%PROJECT_NAME%".UT
+dotnet sln "%PROJECT_NAME%".slnx add test/"%PROJECT_NAME%".UIT
 
 @echo.
 @echo [END] Projects created for %PROJECT_NAME%.
