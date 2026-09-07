@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/src/" />
+  <Folder Name="/src/">
+    <Project Path="src/AppForSEII.MAUI/AppForSEII.MAUI.csproj" />
+  </Folder>
   <Folder Name="/src/appforseii.api/">
     <Project Path="src/appforseii.api/AppForSEII.API.csproj" />
   </Folder>
