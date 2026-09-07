@@ -56,7 +56,7 @@ REM - Create the folder for the source code and create the projects
 md src
 cd src
 
-REM -------- create the API project with authorization using framework 8.0 --------
+REM -------- create the API project with authorization using framework 10.0 --------
 
 dotnet new  webapi -au none -f %NETCORE_VERSION% -n "%PROJECT_NAME%".API
 
