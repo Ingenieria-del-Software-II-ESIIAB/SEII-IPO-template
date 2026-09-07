@@ -24,6 +24,9 @@ SET MOQ_VERSION=4.20.72
 SET SELENIUM_VERSION=4.48.0
 SET CHROME_DRIVER_VERSION=18.9.0
 SET COVERLET_VERSION=10.0.1
+SET NUGET_PROTOCOL=6.12.5
+SET NSWAG_APIDESCRIPTION_CLIENT=14.7.1
+SET NEWTONSOFT_JSON=13.0.4
 
 
 
@@ -67,7 +70,8 @@ dotnet add package Swashbuckle.AspNetCore --version %SWASHBUCKLE_VERSION%
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version %WEB_CODE_GENERATION_LIB_VERSION%
 dotnet add package Microsoft.AspNetCore.Components.DataAnnotations.Validation --version %DATA_ANNOTATIONS_LIB_VERSION%
-
+dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
+dotnet add package Microsoft.AspNetCore.OpenApi --version %NETCORE_LIB_VERSION%
 
 REM -----------------------  add a file for the design of the Class Diagram
 echo ^<?xml version="1.0" encoding="utf-8"?^>^<ClassDiagram^>^</ClassDiagram^> >  ClassDiagram.cd
@@ -83,6 +87,9 @@ cd "%PROJECT_NAME%".Web
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version %WEB_CODE_GENERATION_LIB_VERSION%
+dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
+dotnet add package NSwag.ApiDescription.Client --version %NSWAG_APIDESCRIPTION_CLIENT%
+dotnet add package Newtonsoft.Json --version %NEWTONSOFT_JSON%
 cd ..
 
 REM - add the created projects to the solution
@@ -111,6 +118,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools --version %NETCORE_LIB_VE
 dotnet add package xunit --version %XUNIT_VERSION%
 dotnet add package coverlet.collector --version %COVERLET_VERSION%
 dotnet add package Moq --version %MOQ_VERSION%
+dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
 cd ..
 
 REM -------- create the project for the functional test
@@ -124,6 +132,7 @@ dotnet add package Selenium.WebDriver.ChromeDriver --version %CHROME_DRIVER_VERS
 dotnet add package xunit --version %XUNIT_VERSION%
 dotnet add package xunit.runner.visualstudio --version %XUNIT_VERSION%
 dotnet add package coverlet.collector --version %COVERLET_VERSION%
+dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
 cd..
 
 REM - add the created projects to the solution
