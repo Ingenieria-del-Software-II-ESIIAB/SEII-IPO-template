@@ -27,7 +27,7 @@ SET COVERLET_VERSION=10.0.1
 SET NUGET_PROTOCOL=6.12.5
 SET NSWAG_APIDESCRIPTION_CLIENT=14.7.1
 SET NEWTONSOFT_JSON=13.0.4
-
+SET SELENIUM_WAITHELPERS=1.0.2
 
 
 
@@ -133,6 +133,9 @@ dotnet add package xunit --version %XUNIT_VERSION%
 dotnet add package xunit.runner.visualstudio --version %XUNIT_VERSION%
 dotnet add package coverlet.collector --version %COVERLET_VERSION%
 dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
+dotnet add package SeleniumExtras.WaitHelpers --version %SELENIUM_WAITHELPERS%
+
+
 cd..
 
 REM - add the created projects to the solution
