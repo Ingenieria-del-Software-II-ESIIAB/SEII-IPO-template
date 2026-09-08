@@ -3,16 +3,8 @@
 ## Instalación VS Code
 Descargar e instalar [VS Code](https://code.visualstudio.com/download?_exp_download=fb315fc982)
 
-## Control de Versiones
-
-### Instalar Git 
-Descargar e instalar Git for Windows (Mac o Linux dependiendo de tu máquina) usando las opciones por defecto [GIT] (https://git-scm.com/install/windows)
-
-### Instalar las siguientes extensiones en VS Code para Git:
-- GitHub Pull Requests: para control de versiones
-- Git Graph: Git Graph del repositorio
-- Git History: ver el log e historia de los archivos.
-
+## Control de Versiones: Instalar Git 
+Descargar e instalar Git for Windows (Mac o Linux dependiendo de tu máquina) usando las opciones por defecto [GIT](https://git-scm.com/install/windows)
 
 ## Instalar para desarrollo
 
@@ -20,7 +12,11 @@ Descargar e instalar en tu máquina [.NET10](https://dotnet.microsoft.com/en-us/
 
 Descargar e instalar en tu máquina SQL Server 2025 Express Edition [SQL Server 2025 Express Edition](https://learn.microsoft.com/es-es/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver17#install-localdb)
 
-Abre la vista de extensiones (ctrl+shift+x) Instalar en VS Code las extensiones:
+## Instalar extensiones en VS Code
+
+Abre la vista de extensiones (ctrl+shift+x).
+
+Instalar en VS Code las extensiones para desarrollo:
 - C#
 - C# Namespace autocompletion
 - C# Dev Kit
@@ -31,23 +27,33 @@ Abre la vista de extensiones (ctrl+shift+x) Instalar en VS Code las extensiones:
 - Open in Browser
 - PlantUML
 
+Instalar para testing las siguientes extensiones:
+- .Net Core Test Explorer
+- Coverage Gutters 
+
+Instalar las siguientes extensiones en VS Code para Git:
+- GitHub Pull Requests: para control de versiones
+- Git Graph: Git Graph del repositorio
+- Git History: ver el log e historia de los archivos.
+
+Alternativamente puedes **instalar todas las extensiones** de la siguiente forma:
+1. abre una terminal
+2. cambia a la raiz de la solución donde está el archivo **extensions4VSCode.txt**
+3. ejecuta el siguiente comando:
+
+```bash
+Get-Content extensions.txt | ForEach-Object { code --install-extension $_ }
+```
 
 ## Para aquellos equipos que vayan a desarrollar su proyecto con MAUI para la asignatura de IPO:
 Seguir las instrucciones que se indican en el siguiente enlace [MAUI](https://learn.microsoft.com/es-es/dotnet/maui/get-started/installation?view=net-maui-10.0&tabs=visual-studio-code#connect-your-account-to-c-dev-kit)
 Ya se proporciona un proyecto para desarrollo AppForSEII.MAUI por lo que no es necesario su creación.
 
 
-## Instalar para testing
-
-Instalar extensiones:
-
-- .Net Core Test Explorer
-- Coverage Gutters para visualización de la cobertura de código. 
-
 
 # Preparar el proyecto para iniciar el desarrollo
 
-## Crea el proyecto
+## Crea el repositorio:
 Clona la plantilla del proyecto
 
 ## Instala las herramientas para Entity Framework en el proyecto ejecutando en el terminal el siguiente comando (View\Terminal):
@@ -74,14 +80,6 @@ dotnet tool install --global dotnet-reportgenerator-globaltool
 dotnet tool install --global PlantUmlClassDiagramGenerator
 ```
 
-## Instala las herramientas Roslynator para refactoring:
-
-```bash
-dotnet add package Roslynator.Analyzers
-dotnet add package Roslynator.CodeAnalysis.Analyzer
-dotnet add package Roslynator.Formatting.Analyzers
-dotnet add package Roslynator.CodeFixes
-```
 
 # Desarrolla tu proyecto 
 
@@ -182,7 +180,7 @@ dotnet ef database drop
 Al ejecutar el siguiente comando desde la carpeta de la solución:
 
 ```bash
-puml-gen ./src/Examenes.API/Models/Hogwarts  ./docs/uml -dir -excludePaths **/bin,**/obj,**/Migrations  -createAssociation  -allInOne
+puml-gen ./src/AppForSEII.API/Models  ./src/AppForSEII.API/ClassDiagram -dir -excludePaths **/bin,**/obj,**/Migrations  -createAssociation  -allInOne
 ```
 
 cuyas opciones son:
