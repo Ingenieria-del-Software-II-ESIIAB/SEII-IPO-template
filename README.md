@@ -29,6 +29,7 @@ Instalar en VS Code las extensiones para desarrollo:
 - MSSQL
 - Open in Browser
 - PlantUML
+- GitHub Actions
 
 Instalar para testing las siguientes extensiones:
 - .Net Core Test Explorer
@@ -280,6 +281,7 @@ Install the following extensions for development:
 - MSSQL
 - Open in Browser
 - PlantUML
+- GitHub Actions
 
 Install the following extensions for testing:
 
