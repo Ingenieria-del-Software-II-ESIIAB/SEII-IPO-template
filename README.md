@@ -1,12 +1,12 @@
 # Instalación de VS Code y herramientas relacionadas
 
 ## Instalación VS Code
-Descargar e instalar (VS Code)[https://code.visualstudio.com/download?_exp_download=fb315fc982]
+Descargar e instalar [VS Code](https://code.visualstudio.com/download?_exp_download=fb315fc982)
 
 ## Control de Versiones
 
 ### Instalar Git 
-Descargar e instalar Git for Windows (Mac o Linux dependiendo de tu máquina) usando las opciones por defecto (GIT) [https://git-scm.com/install/windows]
+Descargar e instalar Git for Windows (Mac o Linux dependiendo de tu máquina) usando las opciones por defecto [GIT] (https://git-scm.com/install/windows)
 
 ### Instalar las siguientes extensiones en VS Code para Git:
 - GitHub Pull Requests: para control de versiones
@@ -18,21 +18,18 @@ Descargar e instalar Git for Windows (Mac o Linux dependiendo de tu máquina) us
 
 Descargar e instalar en tu máquina [.NET10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
 
-Descargar e instalar en tu máquina SQL Server 2025 Express Edition [SQL Server 2025 Express Edition] (https://learn.microsoft.com/es-es/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver17#install-localdb)
+Descargar e instalar en tu máquina SQL Server 2025 Express Edition [SQL Server 2025 Express Edition](https://learn.microsoft.com/es-es/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver17#install-localdb)
 
-Instalar en VS Code las extensiones:
-- C#: de Microsoft para soporte al lenguaje
+Abre la vista de extensiones (ctrl+shift+x) Instalar en VS Code las extensiones:
+- C#
 - C# Namespace autocompletion
-- C# Dev Kit: de Microsoft para soporte a desarrollo
+- C# Dev Kit
 - .NET Install Tool
 - .Net Maui
 - Microsoft.AspNetCore.Razor.VSCode.BlazorWasmDebuggingExtension
-- MSSQL: para gestión de la BD en local
-- Open in Browser: para abrir archivos .html
-- PlantUML: para generar los diagramas a partir del código
-
-
-
+- MSSQL
+- Open in Browser
+- PlantUML
 
 
 ## Para aquellos equipos que vayan a desarrollar su proyecto con MAUI para la asignatura de IPO:
@@ -47,13 +44,6 @@ Instalar extensiones:
 - .Net Core Test Explorer
 - Coverage Gutters para visualización de la cobertura de código. 
 
-Instalar en el terminal de VS Code (View\Terminal):
-
-- ReportGenerator como herramienta .NET:
-
-```bash
-dotnet tool install --global dotnet-reportgenerator-globaltool
-```
 
 # Preparar el proyecto para iniciar el desarrollo
 
@@ -71,6 +61,12 @@ dotnet tool install --global dotnet-ef
 dotnet tool install --global NSwag.ConsoleCore
 
 ```
+## Instala ReportGenerator como herramienta .NET:
+
+```bash
+dotnet tool install --global dotnet-reportgenerator-globaltool
+```
+
 
 ## Instala las herramientas para generación de modelos UML a partir de código en tu proyecto:
 
@@ -140,10 +136,10 @@ Ctrl+.: Genera código: Selecciona atributos para generar constructores y métod
 
 ## Trabajar con migraciones:
 
-En el terminal integrado de VS Code, sitúate en la carpeta que contiene el .csproj donde están las clases de modelo:
+En el terminal integrado de VS Code, sitúate en la carpeta APPForSEII.API que contiene el .csproj donde están las clases de modelo:
 
 ```bash
-cd ruta/de/tu/proyecto
+cd ruta/de/tu/proyecto/APPForSEII.API 
 ```
 
 - Crear la migración en la carpeta Migrations/ con los archivos necesarios:
@@ -168,6 +164,17 @@ dotnet ef migrations remove
 
 ```bash
 dotnet ef database update
+```
+- Eliminar todas las migraciones de la BD
+
+```bash
+dotnet ef database update 0
+```
+
+- Borrar la BD
+
+```bash
+dotnet ef database drop
 ```
 
 ## Generar diagramas desde código
@@ -194,7 +201,7 @@ Para ver el diagrama, abrir include.puml y pulsar Alt+d
 Para generar el Cliente de la API en el proyecto web, realiza los siguientes pasos.
 1. Abre un terminal y ejecuta la api
 2. Copia la ruta al fichero swagger.json
-3. Abre otro terminal y cambia al directorio donde este el proyecto web. Ejecuta el comando nswag reemplazando la ruta que aparece a continuación por la ruta de tu fichero swagger:
+3. Abre otro terminal y cambia al directorio donde este el proyecto web. Ejecuta el comando nswag reemplazando la ruta http que aparece a continuación por la ruta de tu fichero swagger:
 
 ```bash
 cd src
