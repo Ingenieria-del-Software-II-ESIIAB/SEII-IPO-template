@@ -1,3 +1,6 @@
+[English Instructions for installing your environment](#english-instructions)
+[Instrucciones en castellano para instalar tu entorno](#instalación-de-vs-code-y-herramientas-relacionadas)
+
 # Instalación de VS Code y herramientas relacionadas
 
 ## Instalación VS Code
@@ -235,3 +238,299 @@ reportgenerator   -reports:"TestResults/**/coverage.cobertura.xml"   -targetdir:
 4. Visualiza la cobertura de las pruebas
 
 Con **Coverage Gutters**: CTRL+SHIT+P: Coverage Gutter: Display.
+
+# ENGLISH INSTRUCTIONS
+
+# Installing VS Code and Related Tools
+
+## Install VS Code
+
+Download and install **VS Code**:
+
+https://code.visualstudio.com/download
+
+## Version Control: Install Git
+
+Download and install **Git for Windows** (or the Mac/Linux version depending on your machine) using the default installation options:
+
+https://git-scm.com/install/windows
+
+## Install Development Tools
+
+Download and install **.NET 10** on your machine:
+
+https://dotnet.microsoft.com/en-us/download/dotnet/10.0
+
+Download and install **SQL Server 2025 Express Edition (LocalDB)**:
+
+https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver17#install-localdb
+
+## Install VS Code Extensions
+
+Open the Extensions view (**Ctrl+Shift+X**).
+
+Install the following extensions for development:
+
+- C#
+- C# Namespace Autocompletion
+- C# Dev Kit
+- .NET Install Tool
+- .NET MAUI
+- Microsoft.AspNetCore.Razor.VSCode.BlazorWasmDebuggingExtension
+- MSSQL
+- Open in Browser
+- PlantUML
+
+Install the following extensions for testing:
+
+- .NET Core Test Explorer
+- Coverage Gutters
+
+Install the following Git-related extensions:
+
+- GitHub Pull Requests: version control integration
+- Git Graph: repository Git graph visualization
+- Git History: view file history and commit logs
+
+Alternatively, you can **install all extensions automatically**:
+
+1. Open a terminal.
+2. Change to the solution root directory containing the **extensions4VSCode.txt** file.
+3. Run the following command:
+
+```powershell
+Get-Content extensions.txt | ForEach-Object { code --install-extension $_ }
+```
+
+## For Teams Developing a MAUI Project for the HCI Course
+
+Follow the instructions provided at:
+
+https://learn.microsoft.com/en-us/dotnet/maui/get-started/installation?view=net-maui-10.0&tabs=visual-studio-code#connect-your-account-to-c-dev-kit
+
+A project named **AppForSEII.MAUI** is already provided, so there is no need to create it from scratch.
+
+# Prepare the Project Before Starting Development
+
+## Create the Repository
+
+Clone the project template repository.
+
+## Install Entity Framework Tools
+
+Run the following command from a terminal (**View → Terminal**):
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+## Install Development Tools
+
+Open a terminal in VS Code (**View → Terminal**) and run:
+
+```bash
+dotnet tool install --global NSwag.ConsoleCore
+```
+
+## Install ReportGenerator
+
+```bash
+dotnet tool install --global dotnet-reportgenerator-globaltool
+```
+
+## Install UML Generation Tools
+
+```bash
+dotnet tool install --global PlantUmlClassDiagramGenerator
+```
+
+# Develop Your Project
+
+## Build, Clean, and Debug
+
+1. Open the integrated terminal in VS Code:
+   **View → Terminal** (or **Ctrl + ñ** on a Spanish keyboard).
+
+2. Navigate to the folder containing the project you want to work with (`.csproj`).
+
+3. Build the project. If you are in a project folder, only that project will be compiled. If you are in the solution folder, all projects will be compiled:
+
+```bash
+dotnet build
+```
+
+To build in Release mode:
+
+```bash
+dotnet build -c Release
+```
+
+This command:
+
+- Compiles the code
+- Restores NuGet packages if necessary
+- Generates output under `bin/Debug/net10.0/`
+
+4. Restore packages before building (if there are new dependencies):
+
+```bash
+dotnet restore
+```
+
+5. Run the application (when located in the Web API folder):
+
+```bash
+dotnet run
+```
+
+To run a specific project from the solution root:
+
+```bash
+dotnet run --project MyApi/MyApi.csproj
+```
+
+6. To clean the project or solution:
+
+```bash
+dotnet clean
+```
+
+## Run Tasks
+
+Press:
+
+```text
+Ctrl+Shift+P
+```
+
+Then select **Run Task** to execute tasks such as Build, Debug, etc.
+
+## Refactoring
+
+- **Ctrl+Shift+R**: Roslynator-supported refactorings.
+- **Ctrl+.**: Generate code, including constructors and `Equals` methods from selected attributes.
+
+# Working with Migrations
+
+In the VS Code integrated terminal, navigate to the **AppForSEII.API** folder containing the model classes and the `.csproj` file:
+
+```bash
+cd path/to/your/project/AppForSEII.API
+```
+
+### Create a Migration
+
+```bash
+dotnet ef migrations add CreateIdentitySchema
+```
+
+Creates the migration files in the **Migrations** folder.
+
+### List Existing Migrations
+
+```bash
+dotnet ef migrations list
+```
+
+### Remove the Last Migration
+
+```bash
+dotnet ef migrations remove
+```
+
+### Apply the Migration to the Database
+
+```bash
+dotnet ef database update
+```
+
+### Remove All Applied Migrations from the Database
+
+```bash
+dotnet ef database update 0
+```
+
+### Delete the Database
+
+```bash
+dotnet ef database drop
+```
+
+# Generate Diagrams from Code
+
+From the solution folder, run:
+
+```bash
+puml-gen ./src/AppForSEII.API/Models ./src/AppForSEII.API/ClassDiagram -dir -excludePaths **/bin,**/obj,**/Migrations -createAssociation -allInOne
+```
+
+Command options:
+
+- `-dir`: Processes input/output directories.
+- `-excludePaths`: Excludes noise from `bin/` and `obj/`.
+- `-createAssociation`: Detects associations from fields and properties.
+- `-allInOne`: Creates an `include.puml` file that groups all diagrams.
+
+This generates `.puml` files (and an `include.puml` file when using `-allInOne`) that can be opened and previewed in VS Code using the PlantUML extension.
+
+To view the diagram:
+
+1. Open `include.puml`.
+2. Press **Alt+D**.
+
+The PlantUML extension supports rendering through a server (avoiding the need to install Java or Graphviz) and can export diagrams to PNG or SVG.
+
+# Generate an API Client
+
+To generate the API client in the web project:
+
+1. Open a terminal and start the API.
+2. Copy the URL of the `swagger.json` file.
+3. Open another terminal and navigate to the web project directory:
+
+```bash
+cd src
+cd AppForSEII.Web
+```
+
+4. Run the following command, replacing the Swagger URL as needed:
+
+```bash
+nswag openapi2csclient /input:http://localhost:5180/swagger/v1/swagger.json /classname:AppForSEIIAPIClient /namespace:AppForSEII.Web.API /output:AppForSEIIAPIClient.cs
+```
+
+# Testing: Using Coverlet Collector
+
+## 1. Add the Coverlet Package
+
+```bash
+dotnet add <YOUR_TEST_PROJECT>.csproj package coverlet.collector
+```
+
+## 2. Generate Code Coverage
+
+This creates a Cobertura report under:
+
+```text
+TestResults/<GUID>/coverage.cobertura.xml
+```
+
+Run:
+
+```bash
+dotnet test --collect:"XPlat Code Coverage"
+```
+
+## 3. Generate the Coverage Report
+
+```bash
+reportgenerator -reports:"TestResults/**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:Html
+```
+
+## 4. View Test Coverage
+
+Using the **Coverage Gutters** extension:
+
+```text
+Ctrl+Shift+P → Coverage Gutters: Display
+```
