@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      API: ./src/App4SEII.API/App4SEII.API.csproj
-      WEB: ./src/App4SEII.Web/App4SEII.Web.csproj
-      UT:  ./test/App4SEII.UT/App4SEII.UT.csproj
-      UIT: ./test/App4SEII.UIT/App4SEII.UIT.csproj
+      API: ./src/AppForSEII.API/AppForSEII.API.csproj
+      WEB: ./src/AppForSEII.Web/AppForSEII.Web.csproj
+      UT:  ./test/AppForSEII.UT/AppForSEII.UT.csproj
+      UIT: ./test/AppForSEII.UIT/AppForSEII.UIT.csproj
       
     steps:
       - name: Check out repository code 
