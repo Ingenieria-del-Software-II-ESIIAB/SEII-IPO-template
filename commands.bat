@@ -8,24 +8,27 @@ REM - Third, replace AppForMovies in the next line with the name (WITHOUT WHITES
 REM - Fourth, run this .bat in the command line
 REM - Commit and push the changes done
 
-SET PROJECT_NAME=AppForSEII2526
+SET PROJECT_NAME=AppForSEII
 if PROJECT_NAME=="" SET PROJECT_NAME=AppForMovies
 
 REM - Fourth, run commands.bat opening a command line interface like cmd and writting commands
 
-SET NETCORE_VERSION=net8.0
-SET NETCORE_LIB_VERSION=8.0.16
-SET WEB_CODE_GENERATION_LIB_VERSION=8.0.6
-SET SWASHBUCKLE_VERSION=8.1.4
+SET NETCORE_VERSION=net10.0
+SET NETCORE_LIB_VERSION=10.0.11
+SET WEB_CODE_GENERATION_LIB_VERSION=10.0.2
+SET SWASHBUCKLE_VERSION=10.2.3
 SET DATA_ANNOTATIONS_LIB_VERSION=3.2.0-rc1.20223.4
-SET XUNIT_VERSION=2.9.3
-SET XUNIT_RUNNER_VERSION=3.1.1
+SET XUNIT_VERSION=4.0.0
+SET XUNIT_RUNNER_VERSION=4.0.0
 SET MOQ_VERSION=4.20.72
-SET SELENIUM_VERSION=4.33.0
-SET CHROME_DRIVER_VERSION=137.0.7151.6800
-SET COVERLET_VERSION=6.0.4
-
-
+SET SELENIUM_VERSION=4.48.0
+SET CHROME_DRIVER_VERSION=18.9.0
+SET COVERLET_VERSION=10.0.1
+SET NUGET_PROTOCOL=7.9.0
+SET NSWAG_APIDESCRIPTION_CLIENT=14.7.1
+SET NEWTONSOFT_JSON=13.0.4
+SET SELENIUM_WAITHELPERS=1.0.2
+set EF_DESIGN=10.0.2
 
 
 @echo *********************************************************
@@ -53,7 +56,7 @@ REM - Create the folder for the source code and create the projects
 md src
 cd src
 
-REM -------- create the API project with authorization using framework 8.0 --------
+REM -------- create the API project with authorization using framework 10.0 --------
 
 dotnet new  webapi -au none -f %NETCORE_VERSION% -n "%PROJECT_NAME%".API
 
@@ -63,9 +66,13 @@ cd "%PROJECT_NAME%".API
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.EntityFrameworkCore.Tools --version %NETCORE_LIB_VERSION%
+dotnet add package Swashbuckle.AspNetCore --version %SWASHBUCKLE_VERSION%
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version %WEB_CODE_GENERATION_LIB_VERSION%
 dotnet add package Microsoft.AspNetCore.Components.DataAnnotations.Validation --version %DATA_ANNOTATIONS_LIB_VERSION%
+dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
+dotnet add package Microsoft.AspNetCore.OpenApi --version %NETCORE_LIB_VERSION%
+dotnet add package Microsoft.EntityFrameworkCore.Design --version %EF_DESIGN%
 
 
 REM -----------------------  add a file for the design of the Class Diagram
@@ -82,12 +89,15 @@ cd "%PROJECT_NAME%".Web
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version %NETCORE_LIB_VERSION%
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version %WEB_CODE_GENERATION_LIB_VERSION%
+dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
+dotnet add package NSwag.ApiDescription.Client --version %NSWAG_APIDESCRIPTION_CLIENT%
+dotnet add package Newtonsoft.Json --version %NEWTONSOFT_JSON%
 cd ..
 
 REM - add the created projects to the solution
 cd..
-dotnet sln "%PROJECT_NAME%".sln add src/"%PROJECT_NAME%".API
-dotnet sln "%PROJECT_NAME%".sln add src/"%PROJECT_NAME%".Web
+dotnet sln "%PROJECT_NAME%".slnx add src/"%PROJECT_NAME%".API
+dotnet sln "%PROJECT_NAME%".slnx add src/"%PROJECT_NAME%".Web
 
 
 REM -------------------------------TEST-----------------------------------------------------------------------
@@ -110,6 +120,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools --version %NETCORE_LIB_VE
 dotnet add package xunit --version %XUNIT_VERSION%
 dotnet add package coverlet.collector --version %COVERLET_VERSION%
 dotnet add package Moq --version %MOQ_VERSION%
+dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
 cd ..
 
 REM -------- create the project for the functional test
@@ -123,12 +134,16 @@ dotnet add package Selenium.WebDriver.ChromeDriver --version %CHROME_DRIVER_VERS
 dotnet add package xunit --version %XUNIT_VERSION%
 dotnet add package xunit.runner.visualstudio --version %XUNIT_VERSION%
 dotnet add package coverlet.collector --version %COVERLET_VERSION%
+dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
+dotnet add package SeleniumExtras.WaitHelpers --version %SELENIUM_WAITHELPERS%
+
+
 cd..
 
 REM - add the created projects to the solution
 cd..
-dotnet sln "%PROJECT_NAME%".sln add test/"%PROJECT_NAME%".UT
-dotnet sln "%PROJECT_NAME%".sln add test/"%PROJECT_NAME%".UIT
+dotnet sln "%PROJECT_NAME%".slnx add test/"%PROJECT_NAME%".UT
+dotnet sln "%PROJECT_NAME%".slnx add test/"%PROJECT_NAME%".UIT
 
 @echo.
 @echo [END] Projects created for %PROJECT_NAME%.

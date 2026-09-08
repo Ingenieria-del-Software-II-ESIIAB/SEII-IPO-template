@@ -1,195 +1,538 @@
-#[Instrucciones en Español para Grupo A y Grupo B](#instrucciones-para-utilizar-esta-plantilla).
+[English Instructions for installing your environment](#english-instructions)
+[Instrucciones en castellano para instalar tu entorno](#instalación-de-vs-code-y-herramientas-relacionadas)
 
-#[Instructions in English for Group I](#instructions-to-use-this-template).
+# Instalación de VS Code y herramientas relacionadas
 
-# Instrucciones para utilizar esta plantilla.
+## Instalación VS Code
+Descargar e instalar [VS Code](https://code.visualstudio.com/download?_exp_download=fb315fc982)
 
-## 1. Cree la organización 
+## Control de Versiones: Instalar Git 
+Descargar e instalar Git for Windows (Mac o Linux dependiendo de tu máquina) usando las opciones por defecto [GIT](https://git-scm.com/install/windows)
 
-- Cree la organización para su equipo con el nombre **ISII-2526-GrupoX-Team**, donde GrupoX puede ser GrupoA o GrupoB siguiendo las instrucciones disponibles en:  
-[Create an organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
+## Instalar para desarrollo
 
-- Establezca que dicha organización pertenece a su **cuenta personal**. 
+Descargar e instalar en tu máquina [.NET10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
 
+Descargar e instalar en tu máquina SQL Server 2025 Express Edition [SQL Server 2025 Express Edition](https://learn.microsoft.com/es-es/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver17#install-localdb)
 
-### 1.1 Añada un equipo a su organización
+## Instalar extensiones en VS Code
 
-Siga las instrucciones para crear el equipo [Creating an organization team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
+Abre la vista de extensiones (ctrl+shift+x).
 
+Instalar en VS Code las extensiones para desarrollo:
+- C#
+- C# Namespace autocompletion
+- C# Dev Kit
+- .NET Install Tool
+- .Net Maui
+- Microsoft.AspNetCore.Razor.VSCode.BlazorWasmDebuggingExtension
+- MSSQL
+- Open in Browser
+- PlantUML
+- GitHub Actions
 
-### 1.2 Añada miembros al equipo de su organización
+Instalar para testing las siguientes extensiones:
+- .Net Core Test Explorer
+- Coverage Gutters 
 
-Siga las instrucciones para añadir miembros [Adding organization members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
+Instalar las siguientes extensiones en VS Code para Git:
+- GitHub Pull Requests: para control de versiones
+- Git Graph: Git Graph del repositorio
+- Git History: ver el log e historia de los archivos.
 
+Alternativamente puedes **instalar todas las extensiones** de la siguiente forma:
+1. abre una terminal
+2. cambia a la raiz de la solución donde está el archivo **extensions4VSCode.txt**
+3. ejecuta el siguiente comando:
 
-## 2. Crear el proyecto
-
-Cree su proyecto con el nombre ISII2526TeamName utilizando la plantilla disponible en: [Plantilla](https://github.com/orgs/Ingenieria-del-Software-II-ESIIAB/projects/14/views/1)
-
-- ADVERTENCIA: el nombre del proyecto NO PUEDE CONTENER ESPACIOS NI CARACTERES NO ALFABÉTICOS
-- Establezca que **el propietario es la organización que acabas de crear.**
-- Establezca la visibilidad (visibility) **como pública**. [establece la visibilidad](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/managing-visibility-of-your-projects#changing-project-visibility)
-
-
-## 3. Cree el repositorio
-
-Cree el repositorio de su equipo con el nombre **ISII2526TeamName** utilizando esta plantilla: [Plantilla](https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template)
-- Siga las instrucciones disponibles en:  
-[Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-- Establezca que el **propietario (owner) es la organización que acaba de crear**.
-- Establezca la visibilidad (visibility) **como pública**.
-- Enlace el repositorio con el proyecto creado antes [Adding your project to a repository](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/adding-your-project-to-a-repository)
-
-## 4. Configure el repositorio de su equipo.
-
-### 4.1. En la rama development modificar el archivo `info.yml`.
-
-```yaml
-project:
-  name: 'ISII-2526-GrupoX-Team'
-  owner: 'GrupoX'
-  teamId: 'Team'
-  identities: {}
-  notifications:
-    email: 'member1@alu.uclm.es,member2@alu.uclm.es,member3@alu.uclm.es,member4@alu.uclm.es'
-  members:
-    member1:
-      name: 'Name1'
-      surname: 'Surname1' 
-      githubUsername: 'Name1gitUserName1'
-    member2:
-      name: 'Name2'
-      surname: 'Surname2' 
-      githubUsername: 'Name1gitUserName2'
-    member3:
-      name: 'Name3'
-      surname: 'Surname3' 
-      githubUsername: 'Name1gitUserName3'
-    member4:
-      name: 'Name4'
-      surname: 'Surname4' 
-      githubUsername: 'Name1gitUserName4'
+```bash
+Get-Content extensions.txt | ForEach-Object { code --install-extension $_ }
 ```
 
-- Donde, GrupoX puede ser GrupoA, GrupoB, o GrupoI, y Team es el nombre del equipo
-    > Por ejemplo, el equipo "TheLeaders" matriculado en el GrupoI sería:
-    >```yaml
-    >name: 'ISII-2526-GrupoI-TheLeaders'
-    >owner: 'GrupoI'
-    >teamId: 'TheLeaders'
-    >```
-
-- Sustituir los datos de cada memberN por los del miembro real.
-- Si el número de miembros es 3 entonces, eliminar member4 de la sección `members`.
-- Modificar la cadena de `notifications.email` para que contengan sólo los correos @alu.uclm.es de todos los miembros separados por comas y sin espacios.
-- Los githubUsername tienen que existir en GitHub.
-
-### 4.2. Unir el proyecto a la asignatura auditada por Bluejay.
-- Cree la rama **main** utilizando development como fuente [como crear una rama](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch-via-the-branches-overview)
-- Accede a [join.bluejay.governify.io](https://join.bluejay.governify.io).
-- Añade la **URL del repositorio** de GitHub. Por ejemplo, la url de este repositorio es "https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template"
-- Click en **CHECK**. Si ha dado error revisa la [sintaxis](https://www.yamllint.com/) del info.yml.
-- **Selecciona el curso** al que te quieres unir (UCLM-ISII-2526) y especifica el código que te dará tu profesor.
-- Click en **JOIN**.
-- En caso de que haya algún otro problema al configurar Bluejay, el equipo de soporte está disponible en [un canal de Gitter dedicado](https://app.gitter.im/#/room/!VTAnLfNgxrEdydQgWd:gitter.im).
-
-
-### 4.3. Añada los miembros de su equipo al repo.
-- Invite al Equipo que ha creado a su repositorio con el Role **Write**: [Invitar a un equipo](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
+## Para aquellos equipos que vayan a desarrollar su proyecto con MAUI para la asignatura de IPO:
+Seguir las instrucciones que se indican en el siguiente enlace [MAUI](https://learn.microsoft.com/es-es/dotnet/maui/get-started/installation?view=net-maui-10.0&tabs=visual-studio-code#connect-your-account-to-c-dev-kit)
+Ya se proporciona un proyecto para desarrollo AppForSEII.MAUI por lo que no es necesario su creación.
 
 
 
+# Preparar el proyecto para iniciar el desarrollo
 
-# Instructions to use this template.
+## Crea el repositorio:
+Clona la plantilla del proyecto
 
-## 1. Create the organisation
+## Instala las herramientas para Entity Framework en el proyecto ejecutando en el terminal el siguiente comando (View\Terminal):
 
-Create your team's organisation with the name **ISII-2526-GrupoI-Team** where Team is the name of your team:
-
-- Follow the instructions available at 
-[Create an organisation](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
-
-- Establish that this organisation **belongs to your personal account**
-
-
-**1.1 Add a team to your organisation**
-
-Follow the instructions to create the team [Creating an organisation team](https://docs.github.com/en/organizations/organizing-members-into-teams/creating-a-team)
-
-**1.2 Add members to your organisation team**
-
-Follow the instructions to add members [Adding organisation members to a team](https://docs.github.com/en/organizations/organizing-members-into-teams/adding-organization-members-to-a-team)
-
-## 2. Create the Project
-
-Create your project with the name ISII2526TeamName using the template available at: [Template](https://github.com/orgs/Ingenieria-del-Software-II-ESIIAB/projects/14/views/1)
-
-- WARNING: the project name CANNOT CONTAIN SPACES OR NON-ALPHABETICAL CHARACTERS
-- Establish that **the owner is the organisation you have just created.**
-- Establish the visibility of the project as **public**. [set visibility](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/managing-visibility-of-your-projects#changing-project-visibility)
-
-## 3. Create the repository
-
-Create your team's repository with the name **ISII2526TeamName**, using this template: [Template](https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template).
-
-- Follow the instructions available at:  
-[Create a repository from a template](https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-- Establish that **the owner is the organisation you have just created.**
-- Establish that **Visibility is Public.**
-- Link the repo with the project you have just created [Adding your project to a repository](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/adding-your-project-to-a-repository)
-
-## 4. Configure your team's repository.
-
-### 4.1. In the development branch, modify the `info.yml` file.
-
-```yaml
-project:
-  name: 'ISII-2526-GrupoX-Team'
-  owner: 'GrupoX'
-  teamId: 'Team'
-  identities: {}
-  notifications:
-    email: 'member1@alu.uclm.es,member2@alu.uclm.es,member3@alu.uclm.es,member4@alu.uclm.es'
-  members:
-    member1:
-      name: 'Name1'
-      surname: 'Surname1' 
-      githubUsername: 'Name1gitUserName1'
-    member2:
-      name: 'Name2'
-      surname: 'Surname2' 
-      githubUsername: 'Name1gitUserName2'
-    member3:
-      name: 'Name3'
-      surname: 'Surname3' 
-      githubUsername: 'Name1gitUserName3'
-    member4:
-      name: 'Name4'
-      surname: 'Surname4' 
-      githubUsername: 'Name1gitUserName4'
+```bash
+dotnet tool install --global dotnet-ef
 ```
 
-- Where GroupX must be GroupI, and Team is the name of the team
-    > For example, the team ‘TheLeaders’ registered in GroupI would be:
-    >```yaml
-    >name: 'ISII-2526-GrupoI-TheLeaders'
-    >owner: 'GroupI'
-    >teamId: 'TheLeaders'
-    >```
-- Replace the data for each memberN with that of the actual member.
-- If the number of members is 3, delete member4 from the `members` section.
-- Modify the `notifications:email` string so that it only contains the @alu.uclm.es email addresses of all members, separated by commas and without spaces.
+## Instala las herramientas de desarrollo, abriendo un terminal en VS code (View\Terminal):
+```bash
+dotnet tool install --global NSwag.ConsoleCore
 
-### 4.2. Link the project to the course audited by Bluejay
-- Create the **main** branch using development as the source [How to create a branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch-via-the-branches-overview)
-- Go to [join.bluejay.governify.io](https://join.bluejay.governify.io).
-- Add the GitHub URL of **your repository**. For instance, the URL of this repo is "https://github.com/Ingenieria-del-Software-II-ESIIAB/SEII-IPO-template"
-- Click **CHECK**. If you get an error, check the [syntax](https://www.yamllint.com/) of the info.yml.
-- **Select the course** you want to join (UCLM-ISII-2526) and specify the password your teacher will give you.
-- Click **JOIN**.
-- If you encounter any other problems when configuring Bluejay, the support team is available on a dedicated Gitter channel (https://app.gitter.im/#/room/!VTAnLfNgxrEdydQgWd:gitter.im).
+```
+## Instala ReportGenerator como herramienta .NET:
+
+```bash
+dotnet tool install --global dotnet-reportgenerator-globaltool
+```
 
 
-### 4.3. Add your team to the repo.
+## Instala las herramientas para generación de modelos UML a partir de código en tu proyecto:
 
-Invite the Team you have created with the Role **Write**:[Inviting a team](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#inviting-a-team-or-person)
+```bash
+dotnet tool install --global PlantUmlClassDiagramGenerator
+```
+
+
+# Desarrolla tu proyecto 
+
+## Compilar, limpiar y depurar
+
+1. Abre el terminal integrado en VS Code Menú: View → Terminal (o Ctrl + ñ en teclado español). 
+2. Situate en la carpeta del proyecto con el que quieres trabajar (.csproj).
+3. Compilar. Si estas en la carpeta de un proyecto, compilará ese proyecto, si estás en la carpeta de la solución, compilará todos los proyectos:
+
+```bash
+dotnet build
+```
+
+Para compilar en modo release:
+
+```bash
+dotnet build -c Release
+```
+
+Esto:
+        Compila el código
+        Restaura paquetes NuGet si es necesario
+        Genera la salida en bin/Debug/net10.0/
+4.  Restaurar paquetes antes de compilar (por si hay dependencias nuevas):
+    dotnet restore
+5.  Ejecutar la aplicación (si estas en la carpeta de la Web API):
+
+```bash
+dotnet run
+```
+
+Puedes especificar un proyecto si estás en la raíz de la solución:
+
+```bash
+dotnet run --project MyApi/MyApi.csproj
+```
+
+6. En caso de necesitar limpiar el proyecto o la solución:
+
+```bash
+dotnet clean
+```
+
+## Ejecutar tareas
+
+CTRL+Shift+p: Ejecutar tareas: Depurar, Build, etc.
+
+## Refactorización
+
+Ctrl+shift+r: refactorizaciones soportadas por Roslynator.
+Ctrl+.: Genera código: Selecciona atributos para generar constructores y método equals.
+
+## Trabajar con migraciones:
+
+En el terminal integrado de VS Code, sitúate en la carpeta APPForSEII.API que contiene el .csproj donde están las clases de modelo:
+
+```bash
+cd ruta/de/tu/proyecto/APPForSEII.API 
+```
+
+- Crear la migración en la carpeta Migrations/ con los archivos necesarios:
+
+```bash
+dotnet ef migrations add CreateIdentitySchema
+```
+
+- Ver el estado actual del modelo:
+
+```bash
+dotnet ef migrations list
+```
+
+- Eliminar la última migración:
+
+```bash
+dotnet ef migrations remove
+```
+
+- Aplicar la migración a la BD
+
+```bash
+dotnet ef database update
+```
+- Eliminar todas las migraciones de la BD
+
+```bash
+dotnet ef database update 0
+```
+
+- Borrar la BD
+
+```bash
+dotnet ef database drop
+```
+
+## Generar diagramas desde código
+
+Al ejecutar el siguiente comando desde la carpeta de la solución:
+
+```bash
+puml-gen ./src/AppForSEII.API/Models  ./src/AppForSEII.API/ClassDiagram -dir -excludePaths **/bin,**/obj,**/Migrations  -createAssociation  -allInOne
+```
+
+cuyas opciones son:
+
+- dir procesa directorios de entrada/salida.
+- excludePaths evita ruido de bin/ y obj/.
+- createAssociation detecta asociaciones desde campos/props.
+- allInOne crea un include.puml para agrupar todo. [github.com], [deepwiki.com]
+
+Se generan .puml (y un include.puml si usas -allInOne) que puedes abrir y previsualizar en VS Code con la extensión PlantUML. La extensión recomienda el render por servidor (evita instalar Java/Graphviz), y soporta exportación a PNG/SVG. [marketplac...studio.com]
+
+Para ver el diagrama, abrir include.puml y pulsar Alt+d
+
+## Generación de API Client
+
+Para generar el Cliente de la API en el proyecto web, realiza los siguientes pasos.
+1. Abre un terminal y ejecuta la api
+2. Copia la ruta al fichero swagger.json
+3. Abre otro terminal y cambia al directorio donde este el proyecto web. Ejecuta el comando nswag reemplazando la ruta http que aparece a continuación por la ruta de tu fichero swagger:
+
+```bash
+cd src
+cd AppForSEII.Web
+
+nswag openapi2csclient /input:http://localhost:5180/swagger/v1/swagger.json /classname:AppForSEIIAPIClient /namespace:AppForSEII.Web.API /output:AppForSEIIAPIClient.cs
+
+```
+
+
+## Testing: Usar coverlet collector
+
+1. Añade el paquete coverlet.collector a tu proyecto de pruebas y ejecuta:
+
+```bash
+dotnet add <TU_PROYECTO_TEST>.csproj package coverlet.collector
+```
+
+2. Ejecuta la **generación de cobertura**.
+
+Genera Cobertura bajo TestResults/<GUID>/coverage.cobertura.xml. Coverlet está integrado con VSTest, y esta es la forma recomendada para recoger cobertura en proyectos .NET (funciona con MSTest, xUnit, NUnit):
+
+```bash
+dotnet test --collect:"XPlat Code Coverage"
+```
+
+3. Genera el informe
+
+```bash
+reportgenerator   -reports:"TestResults/**/coverage.cobertura.xml"   -targetdir:"coverage-report"   -reporttypes:Html
+```
+
+4. Visualiza la cobertura de las pruebas
+
+Con **Coverage Gutters**: CTRL+SHIT+P: Coverage Gutter: Display.
+
+# ENGLISH INSTRUCTIONS
+
+# Installing VS Code and Related Tools
+
+## Install VS Code
+
+Download and install **VS Code**:
+
+https://code.visualstudio.com/download
+
+## Version Control: Install Git
+
+Download and install **Git for Windows** (or the Mac/Linux version depending on your machine) using the default installation options:
+
+https://git-scm.com/install/windows
+
+## Install Development Tools
+
+Download and install **.NET 10** on your machine:
+
+https://dotnet.microsoft.com/en-us/download/dotnet/10.0
+
+Download and install **SQL Server 2025 Express Edition (LocalDB)**:
+
+https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver17#install-localdb
+
+## Install VS Code Extensions
+
+Open the Extensions view (**Ctrl+Shift+X**).
+
+Install the following extensions for development:
+
+- C#
+- C# Namespace Autocompletion
+- C# Dev Kit
+- .NET Install Tool
+- .NET MAUI
+- Microsoft.AspNetCore.Razor.VSCode.BlazorWasmDebuggingExtension
+- MSSQL
+- Open in Browser
+- PlantUML
+- GitHub Actions
+
+Install the following extensions for testing:
+
+- .NET Core Test Explorer
+- Coverage Gutters
+
+Install the following Git-related extensions:
+
+- GitHub Pull Requests: version control integration
+- Git Graph: repository Git graph visualization
+- Git History: view file history and commit logs
+
+Alternatively, you can **install all extensions automatically**:
+
+1. Open a terminal.
+2. Change to the solution root directory containing the **extensions4VSCode.txt** file.
+3. Run the following command:
+
+```powershell
+Get-Content extensions.txt | ForEach-Object { code --install-extension $_ }
+```
+
+## For Teams Developing a MAUI Project for the HCI Course
+
+Follow the instructions provided at:
+
+https://learn.microsoft.com/en-us/dotnet/maui/get-started/installation?view=net-maui-10.0&tabs=visual-studio-code#connect-your-account-to-c-dev-kit
+
+A project named **AppForSEII.MAUI** is already provided, so there is no need to create it from scratch.
+
+# Prepare the Project Before Starting Development
+
+## Create the Repository
+
+Clone the project template repository.
+
+## Install Entity Framework Tools
+
+Run the following command from a terminal (**View → Terminal**):
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+
+## Install Development Tools
+
+Open a terminal in VS Code (**View → Terminal**) and run:
+
+```bash
+dotnet tool install --global NSwag.ConsoleCore
+```
+
+## Install ReportGenerator
+
+```bash
+dotnet tool install --global dotnet-reportgenerator-globaltool
+```
+
+## Install UML Generation Tools
+
+```bash
+dotnet tool install --global PlantUmlClassDiagramGenerator
+```
+
+# Develop Your Project
+
+## Build, Clean, and Debug
+
+1. Open the integrated terminal in VS Code:
+   **View → Terminal** (or **Ctrl + ñ** on a Spanish keyboard).
+
+2. Navigate to the folder containing the project you want to work with (`.csproj`).
+
+3. Build the project. If you are in a project folder, only that project will be compiled. If you are in the solution folder, all projects will be compiled:
+
+```bash
+dotnet build
+```
+
+To build in Release mode:
+
+```bash
+dotnet build -c Release
+```
+
+This command:
+
+- Compiles the code
+- Restores NuGet packages if necessary
+- Generates output under `bin/Debug/net10.0/`
+
+4. Restore packages before building (if there are new dependencies):
+
+```bash
+dotnet restore
+```
+
+5. Run the application (when located in the Web API folder):
+
+```bash
+dotnet run
+```
+
+To run a specific project from the solution root:
+
+```bash
+dotnet run --project MyApi/MyApi.csproj
+```
+
+6. To clean the project or solution:
+
+```bash
+dotnet clean
+```
+
+## Run Tasks
+
+Press:
+
+```text
+Ctrl+Shift+P
+```
+
+Then select **Run Task** to execute tasks such as Build, Debug, etc.
+
+## Refactoring
+
+- **Ctrl+Shift+R**: Roslynator-supported refactorings.
+- **Ctrl+.**: Generate code, including constructors and `Equals` methods from selected attributes.
+
+# Working with Migrations
+
+In the VS Code integrated terminal, navigate to the **AppForSEII.API** folder containing the model classes and the `.csproj` file:
+
+```bash
+cd path/to/your/project/AppForSEII.API
+```
+
+### Create a Migration
+
+```bash
+dotnet ef migrations add CreateIdentitySchema
+```
+
+Creates the migration files in the **Migrations** folder.
+
+### List Existing Migrations
+
+```bash
+dotnet ef migrations list
+```
+
+### Remove the Last Migration
+
+```bash
+dotnet ef migrations remove
+```
+
+### Apply the Migration to the Database
+
+```bash
+dotnet ef database update
+```
+
+### Remove All Applied Migrations from the Database
+
+```bash
+dotnet ef database update 0
+```
+
+### Delete the Database
+
+```bash
+dotnet ef database drop
+```
+
+# Generate Diagrams from Code
+
+From the solution folder, run:
+
+```bash
+puml-gen ./src/AppForSEII.API/Models ./src/AppForSEII.API/ClassDiagram -dir -excludePaths **/bin,**/obj,**/Migrations -createAssociation -allInOne
+```
+
+Command options:
+
+- `-dir`: Processes input/output directories.
+- `-excludePaths`: Excludes noise from `bin/` and `obj/`.
+- `-createAssociation`: Detects associations from fields and properties.
+- `-allInOne`: Creates an `include.puml` file that groups all diagrams.
+
+This generates `.puml` files (and an `include.puml` file when using `-allInOne`) that can be opened and previewed in VS Code using the PlantUML extension.
+
+To view the diagram:
+
+1. Open `include.puml`.
+2. Press **Alt+D**.
+
+The PlantUML extension supports rendering through a server (avoiding the need to install Java or Graphviz) and can export diagrams to PNG or SVG.
+
+# Generate an API Client
+
+To generate the API client in the web project:
+
+1. Open a terminal and start the API.
+2. Copy the URL of the `swagger.json` file.
+3. Open another terminal and navigate to the web project directory:
+
+```bash
+cd src
+cd AppForSEII.Web
+```
+
+4. Run the following command, replacing the Swagger URL as needed:
+
+```bash
+nswag openapi2csclient /input:http://localhost:5180/swagger/v1/swagger.json /classname:AppForSEIIAPIClient /namespace:AppForSEII.Web.API /output:AppForSEIIAPIClient.cs
+```
+
+# Testing: Using Coverlet Collector
+
+## 1. Add the Coverlet Package
+
+```bash
+dotnet add <YOUR_TEST_PROJECT>.csproj package coverlet.collector
+```
+
+## 2. Generate Code Coverage
+
+This creates a Cobertura report under:
+
+```text
+TestResults/<GUID>/coverage.cobertura.xml
+```
+
+Run:
+
+```bash
+dotnet test --collect:"XPlat Code Coverage"
+```
+
+## 3. Generate the Coverage Report
+
+```bash
+reportgenerator -reports:"TestResults/**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:Html
+```
+
+## 4. View Test Coverage
+
+Using the **Coverage Gutters** extension:
+
+```text
+Ctrl+Shift+P → Coverage Gutters: Display
+```
