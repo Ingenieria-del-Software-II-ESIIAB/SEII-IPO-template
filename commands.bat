@@ -28,7 +28,7 @@ SET NUGET_PROTOCOL=6.12.5
 SET NSWAG_APIDESCRIPTION_CLIENT=14.7.1
 SET NEWTONSOFT_JSON=13.0.4
 SET SELENIUM_WAITHELPERS=1.0.2
-
+set EF_DESIGN=10.0.2
 
 
 @echo *********************************************************
@@ -72,6 +72,8 @@ dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version %W
 dotnet add package Microsoft.AspNetCore.Components.DataAnnotations.Validation --version %DATA_ANNOTATIONS_LIB_VERSION%
 dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
 dotnet add package Microsoft.AspNetCore.OpenApi --version %NETCORE_LIB_VERSION%
+dotnet add package Microsoft.EntityFrameworkCore.Design --version %EF_DESIGN%
+
 
 REM -----------------------  add a file for the design of the Class Diagram
 echo ^<?xml version="1.0" encoding="utf-8"?^>^<ClassDiagram^>^</ClassDiagram^> >  ClassDiagram.cd

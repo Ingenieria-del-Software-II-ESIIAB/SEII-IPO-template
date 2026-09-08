@@ -1,9 +1,13 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.Sqlite;
 using AppForSEII.Web.Components;
 using AppForSEII.Web.Components.Account;
 using AppForSEII.Web.Data;
+using AppForSEII.Web.API;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,9 +26,40 @@ builder.Services.AddAuthentication(options =>
     })
     .AddIdentityCookies();
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+// var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+// builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//    options.UseSqlServer(connectionString));
+//string? connection2Database = Environment.GetEnvironmentVariable("DBConnection2Use");
+
+//the variable DBConnection2Use is defined in appsettings.json
+string? connection2Database = builder.Configuration.GetValue(typeof(string), "DBConnection2Use") as string;
+
+
+// If we are using the Production Environment, then the AZURE DB should be used,
+// otherwise the localdb or SQLite should be used
+//https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?source=recommendations&view=aspnetcore-7.0
+switch (connection2Database) {
+    case "SQLite":
+        var _connection = new SqliteConnection("Filename=:memory:");
+        //connection in case a persistent database is required
+        //DbConnection _connection = new SqliteConnection("Data Source=Application.db;Cache=Shared");
+        _connection.Open();
+        builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlite(_connection));
+        break;
+
+    case "AzureSQL":
+        builder.Services.AddDbContext<ApplicationDbContext>(opt =>
+                       opt.UseSqlServer(Environment.GetEnvironmentVariable("AzureSQL")));
+
+        break;
+    default:
+        //the localdb is used
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(connectionString));
+        break;
+}
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options =>
@@ -37,6 +72,11 @@ builder.Services.AddIdentityCore<ApplicationUser>(options =>
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+string? URI2API = builder.Configuration.GetValue(typeof(string), "AppForSEIIAPIClient_URL") as string;
+
+//the environment variable URI2API is defined in appsettings.json
+builder.Services.AddScoped<AppForSEIIAPIClient>(sp =>new AppForSEIIAPIClient(URI2API, new HttpClient()));
 
 var app = builder.Build();
 

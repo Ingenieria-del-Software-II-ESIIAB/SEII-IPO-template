@@ -13,6 +13,7 @@ Descargar e instalar Git for Windows (Mac o Linux dependiendo de tu máquina) us
 - Git Graph: Git Graph del repositorio
 - Git History: ver el log e historia de los archivos.
 
+
 ## Instalar para desarrollo
 
 Descargar e instalar en tu máquina [.NET10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
@@ -30,6 +31,10 @@ Instalar en VS Code las extensiones:
 - Open in Browser: para abrir archivos .html
 - PlantUML: para generar los diagramas a partir del código
 
+
+
+
+
 ## Para aquellos equipos que vayan a desarrollar su proyecto con MAUI para la asignatura de IPO:
 Seguir las instrucciones que se indican en el siguiente enlace [MAUI](https://learn.microsoft.com/es-es/dotnet/maui/get-started/installation?view=net-maui-10.0&tabs=visual-studio-code#connect-your-account-to-c-dev-kit)
 Ya se proporciona un proyecto para desarrollo AppForSEII.MAUI por lo que no es necesario su creación.
@@ -42,7 +47,7 @@ Instalar extensiones:
 - .Net Core Test Explorer
 - Coverage Gutters para visualización de la cobertura de código. 
 
-Instalar en el terminal:
+Instalar en el terminal de VS Code (View\Terminal):
 
 - ReportGenerator como herramienta .NET:
 
@@ -55,10 +60,16 @@ dotnet tool install --global dotnet-reportgenerator-globaltool
 ## Crea el proyecto
 Clona la plantilla del proyecto
 
-## Instala las herramientas para Entity Framework en el proyecto:
+## Instala las herramientas para Entity Framework en el proyecto ejecutando en el terminal el siguiente comando (View\Terminal):
 
 ```bash
 dotnet tool install --global dotnet-ef
+```
+
+## Instala las herramientas de desarrollo, abriendo un terminal en VS code (View\Terminal):
+```bash
+dotnet tool install --global NSwag.ConsoleCore
+
 ```
 
 ## Instala las herramientas para generación de modelos UML a partir de código en tu proyecto:
@@ -177,6 +188,21 @@ cuyas opciones son:
 Se generan .puml (y un include.puml si usas -allInOne) que puedes abrir y previsualizar en VS Code con la extensión PlantUML. La extensión recomienda el render por servidor (evita instalar Java/Graphviz), y soporta exportación a PNG/SVG. [marketplac...studio.com]
 
 Para ver el diagrama, abrir include.puml y pulsar Alt+d
+
+## Generación de API Client
+
+Para generar el Cliente de la API en el proyecto web, realiza los siguientes pasos.
+1. Abre un terminal y ejecuta la api
+2. Copia la ruta al fichero swagger.json
+3. Abre otro terminal y cambia al directorio donde este el proyecto web. Ejecuta el comando nswag reemplazando la ruta que aparece a continuación por la ruta de tu fichero swagger:
+
+```bash
+cd src
+cd AppForSEII.Web
+
+nswag openapi2csclient /input:http://localhost:5180/swagger/v1/swagger.json /classname:AppForSEIIAPIClient /namespace:AppForSEII.Web.API /output:AppForSEIIAPIClient.cs
+
+```
 
 
 ## Testing: Usar coverlet collector
