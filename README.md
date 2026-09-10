@@ -19,6 +19,8 @@ Descargar e instalar en tu máquina SQL Server 2025 Express Edition [SQL Server 
 ## Instalar extensiones en VS Code
 
 Abre la vista de extensiones (ctrl+shift+x).
+
+
 ![Extensiones](https://code.visualstudio.com/assets/docs/configure/extensions/extension-marketplace/extensions-view-icon.png)
 
 Instalar en VS Code las extensiones para desarrollo:
@@ -271,6 +273,8 @@ https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-serv
 ## Install VS Code Extensions
 
 Open the View Extensions (View\Extensions or **Ctrl+Shift+X**).
+
+
 ![Extensions](https://code.visualstudio.com/assets/docs/configure/extensions/extension-marketplace/extensions-view-icon.png)
 
 Install the following extensions for development:
