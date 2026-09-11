@@ -11,87 +11,99 @@ using System.Text;
 
 namespace AppForSEII.UIT.Shared
 {
-    public class UIC_UIT
-    {
-        private  bool _pipeline = false;
-        //private  string _browser = "Chrome";
-        //private  string _browser = "Firefox";
-        private  string _browser = "Edge";
-        public  string URIforUIT
-        {
-            get
-            {
-                return "https://localhost:7197/";
+    public class UC_UIT: IDisposable {
 
+        private bool _pipeline = false;
+
+        //establish which browser you would like to use
+        private string _browser = "Chrome";
+        //private string _browser = "Firefox";
+        //private string _browser = "Edge";
+
+        protected IWebDriver _driver;
+        protected readonly ITestOutputHelper _output;
+
+
+        public string _URI {
+            get {
+                //set url of your web page 
+                return "https://localhost:7081/";
             }
         }
 
-        public  void SetUp_UIT(out IWebDriver _driver, out string _URI)
-        {
-            switch (_browser)
-            {
+        public UC_UIT(ITestOutputHelper output) {
+
+            //it initializes where the errors will be shown
+            _output = output;
+
+            switch (_browser) {
                 case "Firefox":
-                    SetUp_FireFox4UIT(out _driver);
+                    _driver=SetUp_FireFox4UIT();
                     break;
                 case "Edge":
-                    SetUp_EdgeFor4UIT(out _driver);
+                    _driver=SetUp_EdgeFor4UIT();
                     break;
                 default:
                     //by default Chrome will be used
-                    SetUp_Chrome4UIT(out _driver);
+                    _driver=SetUp_Chrome4UIT();
                     break;
             }
             //Added to make _Driver wait when an element is not found.
             //It will wait for a maximum of 50 seconds.
 
-
-            _URI = URIforUIT;
+            //maximize the window browser
             _driver.Manage().Window.Maximize();
-
-
-
         }
 
-        public  void SetUp_Chrome4UIT(out IWebDriver _driver)
-        {
-            var optionsc = new ChromeOptions
-            {
+
+        protected void Initial_step_opening_the_web_page() {
+            _driver.Navigate()
+                .GoToUrl(_URI);
+        }
+
+        protected void Perform_login(string email, string password) {
+            _driver.Navigate()
+                    .GoToUrl(_URI + "Account/Login");
+            // _driver.FindElement(By.Id("Input_Email"))
+            //     .SendKeys("elena.navarro@uclm.es");
+            _driver.FindElement(By.Name("Input.Email"))
+                .SendKeys(email);
+
+            _driver.FindElement(By.Name("Input.Password"))
+                .SendKeys(password);
+
+            _driver.FindElement(By.XPath("/html/body/div[1]/main/article/div/div[1]/section/form/div[4]/button"))
+                .Click();
+        }
+
+
+        protected IWebDriver SetUp_Chrome4UIT() {
+            var optionsc = new ChromeOptions {
                 PageLoadStrategy = PageLoadStrategy.Normal,
                 AcceptInsecureCertificates = true
             };
             //For pipelines use this option for hiding the browser
             if (_pipeline) optionsc.AddArgument("--headless");
 
-            _driver = new ChromeDriver(optionsc);
+            return new ChromeDriver(optionsc);
 
         }
 
-        public  void SetUp_FireFox4UIT(out IWebDriver _driver)
-        {
-            var optionsff = new FirefoxOptions
-            {
+        protected IWebDriver SetUp_FireFox4UIT() {
+            var optionsff = new FirefoxOptions {
                 PageLoadStrategy = PageLoadStrategy.Normal,
                 AcceptInsecureCertificates = true
             };
             //For pipelines use this option for hiding the browser
             if (_pipeline) optionsff.AddArgument("--headless");
 
-            _driver = new FirefoxDriver(optionsff);
+            return new FirefoxDriver(optionsff);
 
         }
 
-        public  void SetUp_EdgeFor4UIT(out IWebDriver _driver)
-        {
-            //var edgeDriverService = Microsoft.Edge.SeleniumTools.EdgeDriverService.CreateChromiumService();
-            //var edgeOptions = new Microsoft.Edge.SeleniumTools.EdgeOptions();
-            //edgeOptions.PageLoadStrategy = PageLoadStrategy.Normal;
-            //edgeOptions.UseChromium = true;
-            //if (_pipeline) edgeOptions.AddArguments("--headless");
+        protected IWebDriver SetUp_EdgeFor4UIT() {
 
-            //_driver = new Microsoft.Edge.SeleniumTools.EdgeDriver(edgeDriverService, edgeOptions);
-
-            var optionsEdge = new EdgeOptions
-            {
+            var optionsEdge = new EdgeOptions {
                 PageLoadStrategy = PageLoadStrategy.Normal,
                 AcceptInsecureCertificates = true
             };
@@ -99,35 +111,15 @@ namespace AppForSEII.UIT.Shared
             //For pipelines use this option for hiding the browser
             if (_pipeline) optionsEdge.AddArgument("--headless");
 
-            _driver = new EdgeDriver(optionsEdge);
+            return new EdgeDriver(optionsEdge);
 
         }
 
 
-        public  void WaitForBeingVisible(IWebDriver _driver, By IdElement)
-        {
-            //used whenever the webelement needs a delay for being clickable
-            var wait = new WebDriverWait(_driver, new TimeSpan(0, 10, 0));
-
-
-            wait.IgnoreExceptionTypes(typeof(NoSuchElementException),
-                typeof(WebDriverTimeoutException),
-                typeof(UnhandledAlertException),
-                typeof(ElementClickInterceptedException));
-
-            IWebElement visibleElement = wait.Until(d => 
-            {
-                try
-                {
-                    var el = _driver.FindElement(IdElement);
-                    return el.Displayed ? el : null;
-                }
-                catch (NoSuchElementException)
-                {
-                    // Si el elemento aún no se ha creado en el DOM, devolvemos null para que siga intentando
-                    return null; 
-                }
-            });
+        public void Dispose() {
+            _driver.Close();
+            _driver.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }
