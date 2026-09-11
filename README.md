@@ -18,7 +18,7 @@ Descargar e instalar en tu máquina SQL Server 2025 Express Edition [SQL Server 
 
 ## Instalar extensiones en VS Code
 
-Si ya estás **usando VS Code**, te recomendamos crear un profile para instalar las extensiones siguiendo las instrucciones proporcionados en Campus Virtual![VS Code profile](https://campusvirtual.uclm.es/mod/resource/view.php?id=1364110)
+Si ya estás **usando VS Code**, te recomendamos crear un profile para instalar las extensiones siguiendo las instrucciones proporcionados en Campus Virtual [VS Code profile](https://campusvirtual.uclm.es/mod/resource/view.php?id=1364110)
 
 
 Puedes **instalar todas las extensiones** de la siguiente forma:
@@ -279,7 +279,7 @@ https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-serv
 
 ## Install VS Code Extensions
 
-If you are **already using VS Code**, we encourage to create a profile for installing the extensions following the instructions provided in Campus Virtual![VS Code profile](https://campusvirtual.uclm.es/mod/resource/view.php?id=1364103)
+If you are **already using VS Code**, we encourage to create a profile for installing the extensions following the instructions provided in Campus Virtual [VS Code profile](https://campusvirtual.uclm.es/mod/resource/view.php?id=1364103)
 
 You can **install all extensions automatically**:
 
