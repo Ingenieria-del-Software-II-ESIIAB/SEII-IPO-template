@@ -18,7 +18,22 @@ Descargar e instalar en tu máquina SQL Server 2025 Express Edition [SQL Server 
 
 ## Instalar extensiones en VS Code
 
-Abre la vista de extensiones (ctrl+shift+x).
+Si ya estás **usando VS Code**, te recomendamos crear un profile para instalar las extensiones siguiendo las instrucciones proporcionados en Campus Virtual [VS Code profile](https://campusvirtual.uclm.es/mod/resource/view.php?id=1364110)
+
+
+Puedes **instalar todas las extensiones** de la siguiente forma:
+1. abre una terminal
+2. cambia a la raiz de la solución donde está el archivo **extensions4VSCode.txt**
+3. ejecuta el siguiente comando:
+
+```bash
+Get-Content extensions4VSCode.txt | ForEach-Object { code --install-extension $_ }
+```
+
+**Alternativamente*, puedes abrir cada extensión una a una. Para ello, abre la vista de extensiones (ctrl+shift+x).
+
+
+![Extensiones](https://code.visualstudio.com/assets/docs/configure/extensions/extension-marketplace/extensions-view-icon.png)
 
 
 ![Extensiones](https://code.visualstudio.com/assets/docs/configure/extensions/extension-marketplace/extensions-view-icon.png)
@@ -44,14 +59,6 @@ Instalar las siguientes extensiones en VS Code para Git:
 - Git Graph: Git Graph del repositorio
 - Git History: ver el log e historia de los archivos.
 
-Alternativamente puedes **instalar todas las extensiones** de la siguiente forma:
-1. abre una terminal
-2. cambia a la raiz de la solución donde está el archivo **extensions4VSCode.txt**
-3. ejecuta el siguiente comando:
-
-```bash
-Get-Content extensions4VSCode.txt | ForEach-Object { code --install-extension $_ }
-```
 
 ## Para aquellos equipos que vayan a desarrollar su proyecto con MAUI para la asignatura de IPO:
 Seguir las instrucciones que se indican en el siguiente enlace [MAUI](https://learn.microsoft.com/es-es/dotnet/maui/get-started/installation?view=net-maui-10.0&tabs=visual-studio-code#connect-your-account-to-c-dev-kit)
@@ -272,7 +279,19 @@ https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-serv
 
 ## Install VS Code Extensions
 
-Open the View Extensions (View\Extensions or **Ctrl+Shift+X**).
+If you are **already using VS Code**, we encourage to create a profile for installing the extensions following the instructions provided in Campus Virtual [VS Code profile](https://campusvirtual.uclm.es/mod/resource/view.php?id=1364103)
+
+You can **install all extensions automatically**:
+
+1. Open a terminal.
+2. Change to the solution root directory containing the **extensions4VSCode.txt** file (use cd command).
+3. Run the following command:
+
+```powershell
+Get-Content extensions4VSCode.txt | ForEach-Object { code --install-extension $_ }
+```
+
+**Alternatively**, open the View Extensions (View\Extensions or **Ctrl+Shift+X**).
 
 
 ![Extensions](https://code.visualstudio.com/assets/docs/configure/extensions/extension-marketplace/extensions-view-icon.png)
@@ -301,15 +320,7 @@ Install the following Git-related extensions:
 - Git Graph: repository Git graph visualization
 - Git History: view file history and commit logs
 
-Alternatively, you can **install all extensions automatically**:
 
-1. Open a terminal.
-2. Change to the solution root directory containing the **extensions4VSCode.txt** file (use cd command).
-3. Run the following command:
-
-```powershell
-Get-Content extensions4VSCode.txt | ForEach-Object { code --install-extension $_ }
-```
 
 ## For Teams Developing a MAUI Project for the HCI Course
 
