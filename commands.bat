@@ -135,7 +135,6 @@ dotnet add package xunit --version %XUNIT_VERSION%
 dotnet add package xunit.runner.visualstudio --version %XUNIT_VERSION%
 dotnet add package coverlet.collector --version %COVERLET_VERSION%
 dotnet add package NuGet.Protocol --version %NUGET_PROTOCOL%
-dotnet add package SeleniumExtras.WaitHelpers --version %SELENIUM_WAITHELPERS%
 
 
 cd..

@@ -19,43 +19,36 @@ public class ApplicationUserDTO
     }
 
     [StringLength(50)]
-    public string? Id
-    {
-        get;
-        set;
-    }
+    public string? Id {get;set;}
 
     [StringLength(50)]
-    public string? Name
-    {
-        get;
-        set;
-    }
+    public string? Name{ get;set;}
 
     [StringLength(50)]
-    public string? Surname
-    {
-        get;
-        set;
-    }
+    public string? Surname {get;set;}
 
     [StringLength(50)]
-    public string? UserName
-    {
-        get;
-        set;
-    }
+    public string? UserName{get;set;}
 
     [StringLength(50)]
-    public string? Email
+    public string? Email{get;set;}
+
+    [Phone]
+    public string? PhoneNumber{ get; set;}
+
+    public override bool Equals(object? obj)
     {
-        get;
-        set;
+        return obj is ApplicationUserDTO dTO &&
+               Id == dTO.Id &&
+               Name == dTO.Name &&
+               Surname == dTO.Surname &&
+               UserName == dTO.UserName &&
+               Email == dTO.Email &&
+               PhoneNumber == dTO.PhoneNumber;
     }
 
-    public string? PhoneNumber
+    public override int GetHashCode()
     {
-        get;
-        set;
+        return HashCode.Combine(Id, Name, Surname, UserName, Email, PhoneNumber);
     }
 }
