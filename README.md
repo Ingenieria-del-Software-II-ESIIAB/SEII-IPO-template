@@ -35,6 +35,9 @@ Get-Content extensions4VSCode.txt | ForEach-Object { code --install-extension $_
 
 ![Extensiones](https://code.visualstudio.com/assets/docs/configure/extensions/extension-marketplace/extensions-view-icon.png)
 
+
+![Extensiones](https://code.visualstudio.com/assets/docs/configure/extensions/extension-marketplace/extensions-view-icon.png)
+
 Instalar en VS Code las extensiones para desarrollo:
 - C#
 - C# Namespace autocompletion
