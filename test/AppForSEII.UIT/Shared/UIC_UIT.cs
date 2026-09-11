@@ -9,15 +9,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AppForSEII.UIT
+namespace AppForSEII.UIT.Shared
 {
-    public class UtilitiesUIT
+    public class UIC_UIT
     {
-        private static bool _pipeline = false;
-        //private static string _browser = "Chrome";
-        //private static string _browser = "Firefox";
-        private static string _browser = "Edge";
-        public static string URIforUIT
+        private  bool _pipeline = false;
+        //private  string _browser = "Chrome";
+        //private  string _browser = "Firefox";
+        private  string _browser = "Edge";
+        public  string URIforUIT
         {
             get
             {
@@ -26,7 +26,7 @@ namespace AppForSEII.UIT
             }
         }
 
-        public static void SetUp_UIT(out IWebDriver _driver, out string _URI)
+        public  void SetUp_UIT(out IWebDriver _driver, out string _URI)
         {
             switch (_browser)
             {
@@ -52,7 +52,7 @@ namespace AppForSEII.UIT
 
         }
 
-        public static void SetUp_Chrome4UIT(out IWebDriver _driver)
+        public  void SetUp_Chrome4UIT(out IWebDriver _driver)
         {
             var optionsc = new ChromeOptions
             {
@@ -66,7 +66,7 @@ namespace AppForSEII.UIT
 
         }
 
-        public static void SetUp_FireFox4UIT(out IWebDriver _driver)
+        public  void SetUp_FireFox4UIT(out IWebDriver _driver)
         {
             var optionsff = new FirefoxOptions
             {
@@ -80,7 +80,7 @@ namespace AppForSEII.UIT
 
         }
 
-        public static void SetUp_EdgeFor4UIT(out IWebDriver _driver)
+        public  void SetUp_EdgeFor4UIT(out IWebDriver _driver)
         {
             //var edgeDriverService = Microsoft.Edge.SeleniumTools.EdgeDriverService.CreateChromiumService();
             //var edgeOptions = new Microsoft.Edge.SeleniumTools.EdgeOptions();
@@ -104,7 +104,7 @@ namespace AppForSEII.UIT
         }
 
 
-        public static void WaitForBeingVisible(IWebDriver _driver, By IdElement)
+        public  void WaitForBeingVisible(IWebDriver _driver, By IdElement)
         {
             //used whenever the webelement needs a delay for being clickable
             var wait = new WebDriverWait(_driver, new TimeSpan(0, 10, 0));
